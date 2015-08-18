@@ -1,0 +1,21 @@
+---
+-
+  name: install Homebrew Casks
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+    - ../config/user/homebrew/casks.yml # loads as `homebrew_casks`
+
+  environment:
+    HOMEBREW_GITHUB_API_TOKEN: "{{ config.env.HOMEBREW_GITHUB_API_TOKEN }}"
+
+  tasks:
+    -
+      homebrew_cask:
+        name={{ item.name }}
+        state={{ item.state | default('present') }}
+      environment:
+        HOMEBREW_CASK_OPTS: --appdir=/Applications
+      with_items: "{{ homebrew_casks }}"

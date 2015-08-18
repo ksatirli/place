@@ -1,0 +1,32 @@
+---
+  homebrew_applications:
+    -
+      name: awscli
+    -
+      name: boot2docker
+    -
+      name: curl
+    -
+      name: docker
+    -
+      name: git
+    -
+      name: jq
+    -
+      name: keybase
+    -
+      name: nodejs
+    -
+      name: nvm
+    -
+      name: postgresql
+    -
+      name: pyenv
+    -
+      name: python
+    -
+      name: python3
+    -
+      name: tmux
+    -
+      name: wget

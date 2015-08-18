@@ -1,0 +1,30 @@
+---
+-
+  name: install / uninstall OS X Defaults
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+    - ../config/user/osx-defaults.yml # loads as `osx_defaults` `osx_defaults_targets`
+
+  tasks:
+    -
+      # NOTE: double-quotes allow for writing space-separated values (e.g.: 0 1 2) as a single entity (e.g.: "0 1 2")
+      command: >
+        defaults
+          write
+          {{ item.domain }}
+          {{ item.section | default() }}
+          {{ item.subsection | default() }}
+          {{ item.type | default() }}
+          "{{ item.value }}"
+      with_items: "{{ osx_defaults }}"
+
+    -
+      command: >
+        killall "{{ item }}"
+        > /dev/null
+        2>&1
+      ignore_errors: yes
+      with_items: "{{ osx_defaults_targets }}"

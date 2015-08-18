@@ -1,0 +1,18 @@
+---
+-
+  name: install / uninstall Atom Packages
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+    - ../config/user/atom-packages.yml # loads as `atom_packages`
+
+  vars:
+    atom_packages_packages: "{{ atom_packages }}"
+
+  environment:
+    HOMEBREW_GITHUB_API_TOKEN: "{{ config.env.HOMEBREW_GITHUB_API_TOKEN }}"
+
+  roles:
+    - atom-packages

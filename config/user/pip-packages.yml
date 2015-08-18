@@ -1,0 +1,15 @@
+---
+  #
+  # list PIP packages you want installed (globally) here.
+  #
+  # Example:
+  # -
+  #   name: boto
+  #   state: present
+  #
+  # Notes:
+  # - "state" defaults to "present"
+  #
+  pip_packages:
+      -
+        name: boto

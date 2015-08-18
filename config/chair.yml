@@ -1,0 +1,6 @@
+---
+config:
+  env:
+    HOMEBREW_GITHUB_API_TOKEN: b509ef13ce08995a8ba1238e83a567e7902ee76d
+  paths:
+    roles: ../roles

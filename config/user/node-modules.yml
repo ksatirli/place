@@ -1,0 +1,55 @@
+---
+  #
+  # list Node modules you want installed (globally) here.
+  #
+  # Example:
+  # -
+  #   name: virgilio
+  #   version: 1.2.3
+  #   registry: https://registry.acme.com
+  #
+  # Notes:
+  # - "version" defaults to "latest"
+  # - "registry" defaults to the npmjs.org registry
+  #
+  node_modules:
+    global:
+      -
+        name: bunyan
+        version: latest
+      -
+        name: bower
+        version: latest
+      -
+        name: bunyan
+        version: latest
+      -
+        name: eslint
+        version: latest
+      -
+        name: grunt
+        version: latest
+      -
+        name: gulp
+        version: latest
+      -
+        name: jscs
+        version: latest
+      -
+        name: js-yaml
+        version: latest
+      -
+        name: jslint
+        version: latest
+      -
+        name: newman
+        version: latest
+      -
+        name: nodemon
+        version: latest
+      -
+        name: pm2
+        version: latest
+      -
+        name: yo # this is the CLI of Yeoman
+        version: latest

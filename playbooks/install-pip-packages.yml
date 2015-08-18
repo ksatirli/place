@@ -1,0 +1,19 @@
+---
+-
+  name: install PIP packages
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+    - ../config/user/pip-packages.yml # loads as `pip_packages`
+
+  environment:
+    HOMEBREW_GITHUB_API_TOKEN: "{{ config.env.HOMEBREW_GITHUB_API_TOKEN }}"
+
+  tasks:
+    -
+      pip:
+        name={{ item.name }}
+        state={{ item.state | default('present') }}
+      with_items: "{{ pip_packages }}"

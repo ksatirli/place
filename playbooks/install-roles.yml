@@ -1,0 +1,17 @@
+---
+-
+  name: prep Ansible Control
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+
+  tasks:
+    - name: install Ansible role(s)
+      command: >
+        ansible-galaxy
+          --force
+          --roles-path={{ config.paths.roles | default('../roles') }}
+          --role-file=../config/user/roles.yml
+          install

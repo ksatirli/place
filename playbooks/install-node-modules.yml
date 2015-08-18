@@ -1,0 +1,21 @@
+---
+-
+  name: install Node modules
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+    - ../config/user/node-modules.yml # loads as `node_modules`
+
+  tasks:
+    -
+      name: Install global Node modules
+      npm:
+        name={{ item.name }}
+        global=yes
+        registry={{ item.registry | default('') }}
+        state=present
+        version={{ item.version | default('') }}
+      with_items:
+        - "{{ node_modules.global }}"
