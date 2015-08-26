@@ -18,15 +18,19 @@ help:
 
 install-homebrew:
 	@#ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	@echo "install-homebrew"
+	@#echo "install-homebrew"
 
 install-ansible:
-	@#brew install fake
-	@echo "install-ansible"
+	@#brew install ansible
+	@#echo "install-ansible"
+
+	install-ansible-head:
+		@ansible-playbook \
+			playbooks/install-ansible-head.yml \
 
 install-ansible-roles:
 	@ansible-playbook \
-		playbooks/install-roles.yml \
+		playbooks/install-ansible-roles.yml \
 
 install-osx-defaults:
 	@ansible-playbook \
@@ -37,6 +41,7 @@ run-playbooks:
 		playbooks/install-homebrew-applications.yml \
 		playbooks/install-homebrew-casks.yml \
 		playbooks/install-node-modules.yml \
+		playbooks/install-atom-packages.yml \
 		playbooks/install-pip-packages.yml
 
 .PHONY: install
