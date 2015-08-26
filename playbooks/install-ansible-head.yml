@@ -1,0 +1,18 @@
+---
+-
+  name: install Ansible (HEAD)
+  gather_facts: false
+  hosts: localhost
+
+  vars_files:
+    - ../config/chair.yml # loads as `config`
+    - ../config/user/homebrew/applications.yml # loads as `homebrew_applications`
+
+  environment:
+    HOMEBREW_GITHUB_API_TOKEN: "{{ config.env.HOMEBREW_GITHUB_API_TOKEN }}"
+
+  tasks:
+    -
+      homebrew:
+        name=ansible
+        state=head
