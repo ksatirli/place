@@ -10,8 +10,6 @@
     -
       name: airfoil
     -
-      name: airserver
-    -
       name: amazon-workdocs
     -
       name: appium
@@ -28,8 +26,6 @@
     -
       name: bee
     -
-      name: boot2docker-status
-    -
       name: breakaway
     -
       name: caffeine
@@ -37,6 +33,8 @@
       name: calibre
     -
       name: docker-compose
+    -
+      name: docker-machine
     -
       name: dropbox
     -
@@ -58,13 +56,19 @@
     -
       name: knox
     -
-      name: little-snitch  
+      name: little-snitch
     -
       name: mitmproxy
+    -
+      name: openra
     -
       name: packer
     -
       name: plug
+    -
+      name: rdm
+    -
+      name: reflector
     -
       name: screenflow
     -
@@ -77,6 +81,8 @@
       name: skype
     -
       name: terraform
+    -
+      name: torbrowser
     -
       name: tower
     -

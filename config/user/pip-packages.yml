@@ -12,4 +12,6 @@
   #
   pip_packages:
       -
+        name: ansible-lint
+      -
         name: boto

@@ -235,7 +235,7 @@
         domain: "com.apple.dock"
         section: "persistent-others"
         type: "-array-add"
-        value: "'{ \"tile-data\" = { \"list-type\" = 1; }; \"tile-type\" = \"recents-tile\"; }'"
+        value: "'{ 'tile-data' = { 'list-type' = 1; }; 'tile-type' = 'recents-tile'; }'"
 
       ###
       # Dashboard.app

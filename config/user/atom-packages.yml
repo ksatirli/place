@@ -29,12 +29,6 @@
         name: minimap
         state: present
       -
-        name: minimap-find-and-replace
-        state: present
-      -
-        name: minimap-linter
-        state: present
-      -
         name: minimap-selection
         state: present
       -

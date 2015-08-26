@@ -3,11 +3,17 @@
     -
       name: awscli
     -
+      name: brew-cask
+    -
       name: boot2docker
+    -
+      name: cask
     -
       name: curl
     -
       name: docker
+    -
+      name: fish
     -
       name: git
     -
