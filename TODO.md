@@ -8,3 +8,4 @@
     * needed for `Adobe Creative Cloud`
   * expand `README`
   * possibly add support for MAS automation
+  * add support for Fish Shell, Oh My Fish, plugins
