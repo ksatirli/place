@@ -19,3 +19,8 @@
       environment:
         HOMEBREW_CASK_OPTS: --appdir=/Applications
       with_items: "{{ homebrew_casks }}"
+
+    -
+      name: remove cached Homebrew Casks
+      command: >
+        brew cask cleanup
