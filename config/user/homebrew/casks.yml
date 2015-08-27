@@ -16,6 +16,8 @@
     -
       name: arq
     -
+      name: atext
+    -
       name: atom
     -
       name: balsamiq-mockups
