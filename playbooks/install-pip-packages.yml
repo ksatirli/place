@@ -13,6 +13,13 @@
 
   tasks:
     -
+      name: install / update PIP
+      command: >
+        pip
+          install
+          --upgrade
+          pip
+    -
       pip:
         name={{ item.name }}
         state={{ item.state | default('present') }}
