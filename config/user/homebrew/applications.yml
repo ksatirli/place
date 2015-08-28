@@ -21,6 +21,8 @@
     -
       name: keybase
     -
+      name: lnav
+    -
       name: nodejs
     -
       name: nvm
