@@ -34,6 +34,10 @@
     -
       name: calibre
     -
+      name: consul
+    -
+      name: consul-web-ui
+    -
       name: docker-compose
     -
       name: docker-machine
