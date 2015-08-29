@@ -86,6 +86,8 @@
     -
       name: skype
     -
+      name: steam
+    -
       name: terraform
     -
       name: torbrowser
@@ -93,6 +95,8 @@
       name: tower
     -
       name: vagrant
+    -
+      name: vault
     -
       name: virtualbox
     -
