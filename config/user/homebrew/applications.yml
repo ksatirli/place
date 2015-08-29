@@ -15,6 +15,8 @@
     -
       name: fish
     -
+      name: graphviz
+    -
       name: git
     -
       name: jq
