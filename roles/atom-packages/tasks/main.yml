@@ -1,5 +1,0 @@
----
-# tasks file for atom-packages
-
-- apm: name={{ item.name }} state={{ item.state }}
-  with_items: atom_packages_packages
