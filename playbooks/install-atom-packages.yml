@@ -1,18 +1,18 @@
 ---
+
 -
-  name: install / uninstall Atom Packages
-  gather_facts: false
-  hosts: localhost
+  name: get list of desired Atom packages
+  include_vars: ../config/users/{{ user }}/atom-packages.yml # loads as `atom_packages`
+  tags:
+    - atom-install-packages
 
-  vars_files:
-    - ../config/chair.yml # loads as `config`
-    - ../config/user/atom-packages.yml # loads as `atom_packages`
-
-  vars:
-    atom_packages_packages: "{{ atom_packages }}"
-
-  environment:
-    HOMEBREW_GITHUB_API_TOKEN: "{{ config.env.HOMEBREW_GITHUB_API_TOKEN }}"
-
-  roles:
-    - atom-packages
+-
+  name: install Atom packages
+  command: >
+    apm \
+      {{ item.state }} \
+      {{ item.name }}
+  ignore_errors: true
+  with_items: "{{ atom_packages }}"
+  tags:
+    - atom-install-packages

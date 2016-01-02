@@ -1,4 +1,5 @@
 ---
+  
 -
   name: prep Ansible Control
   gather_facts: false
@@ -10,8 +11,10 @@
   tasks:
     - name: install Ansible role(s)
       command: >
-        ansible-galaxy
-          --force
-          --roles-path={{ config.paths.roles | default('../roles') }}
-          --role-file=../config/user/roles.yml
+        ansible-galaxy \
+          --force \
+          --roles-path="{{ config.paths.roles }}/" \
+          --role-file=./config/ansible-roles.yml
           install
+      tags:
+        - ansible-install-roles

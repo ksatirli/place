@@ -1,26 +1,16 @@
 ---
+
+-
+  name: get list of desired PIP packages
+  include_vars: ../config/users/{{ user }}/pip-packages.yml # loads as `pip_packages`
+  tags:
+    - pip-install-packages
+
 -
   name: install PIP packages
-  gather_facts: false
-  hosts: localhost
-
-  vars_files:
-    - ../config/chair.yml # loads as `config`
-    - ../config/user/pip-packages.yml # loads as `pip_packages`
-
-  environment:
-    HOMEBREW_GITHUB_API_TOKEN: "{{ config.env.HOMEBREW_GITHUB_API_TOKEN }}"
-
-  tasks:
-    -
-      name: install / update PIP
-      command: >
-        pip
-          install
-          --upgrade
-          pip
-    -
-      pip:
-        name={{ item.name }}
-        state={{ item.state | default('present') }}
-      with_items: "{{ pip_packages }}"
+  pip:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ pip_packages }}"
+  tags:
+    - pip-install-packages
