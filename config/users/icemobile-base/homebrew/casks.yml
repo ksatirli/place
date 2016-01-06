@@ -1,0 +1,17 @@
+---
+  #
+  # list Homebrew Casks you want installed here.
+  #
+  homebrew_casks:
+    -
+      name: caffeine
+    -
+      name: flux
+    -
+      name: google-chrome
+    -
+      name: hipchat
+    -
+      name: slack
+    -
+      name: torbrowser

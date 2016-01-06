@@ -1,0 +1,12 @@
+---
+  homebrew_applications:
+    -
+      name: awscli
+    -
+      name: docker
+    -
+      name: docker-machine
+    -
+      name: jq
+    -
+      name: nodejs

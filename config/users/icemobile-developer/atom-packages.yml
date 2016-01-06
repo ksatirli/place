@@ -1,0 +1,12 @@
+---
+  atom_packages:
+    # list packages you want to have installed here
+      -
+        name: editorconfig
+        state: present
+      -
+        name: minimap
+        state: present
+      -
+        name: minimap-selection
+        state: present

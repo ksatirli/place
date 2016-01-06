@@ -1,0 +1,11 @@
+---
+  #
+  # list Homebrew Casks you want installed here.
+  #
+  homebrew_casks:
+    -
+      name: appium
+    -
+      name: charles
+    -
+      name: iexplorer

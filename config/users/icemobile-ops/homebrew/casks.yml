@@ -1,0 +1,35 @@
+---
+  #
+  # list Homebrew Casks you want installed here.
+  #
+  homebrew_casks:
+    -
+      name: apache-directory-studio
+    -
+      name: atom
+    -
+      name: consul
+    -
+      name: docker
+    -
+      name: docker-compose
+    -
+      name: docker-machine
+    -
+      name: packer
+    -
+      name: rdm
+    -
+      name: sequel-pro
+    -
+      name: sourcetree
+    -
+      name: terraform
+    -
+      name: vagrant
+    -
+      name: vault
+    -
+      name: virtualbox
+    -
+      name: wireshark
