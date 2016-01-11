@@ -88,7 +88,7 @@ help:
 	@echo "   | |____  | | | | | (_| | | | | |   		"
 	@echo "    \_____| |_| |_|  \__,_| |_| |_|   		"
 	@echo "                                      		"
-	@echo "    $(COLOR_MUTE)Prep your machine using Ansible and Brew.$(COLOR_MUTE)"
+	@echo "    $(COLOR_BRIGHT)Prep your machine using Ansible and Brew.$(COLOR_MUTE)"
 	@echo
 	@echo	"$(COLOR_BRIGHT)   Configuration:$(COLOR_OFF)"
 	@echo "     user:     		$(user)"
@@ -101,7 +101,7 @@ help:
 	@echo "     extra-vars: $(COLOR_MUTE)...................$(COLOR_OFF) sets the extra Ansible vars to add"
 	@echo "     skip-tags: $(COLOR_MUTE)....................$(COLOR_OFF) sets the Ansible tags to skip"
 	@echo
-	@echo	"$(COLOR_BRIGHT)   Options:$(COLOR_OFF)"
+	@echo	"$(COLOR_BRIGHT)   Targets:$(COLOR_OFF)"
 	@echo "     make install $(COLOR_MUTE)..................$(COLOR_OFF) installs Xcode CLI tools, Homebrew and Ansible"
 	@echo "     make xcode-install $(COLOR_MUTE)............$(COLOR_OFF) installs Xcode CLI tools"
 	@echo "     make brew-install $(COLOR_MUTE).............$(COLOR_OFF) installs Homebrew"
