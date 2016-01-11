@@ -1,6 +1,0 @@
----
-  homebrew_applications:
-    -
-      name: awscli
-    -
-      name: wget
