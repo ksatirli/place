@@ -1,0 +1,103 @@
+---
+  #
+  # list Homebrew Casks you want installed here.
+  #
+  homebrew_casks:
+    -
+      name: adium
+    -
+      name: adobe-creative-cloud
+    -
+      name: airfoil
+    -
+      name: atext
+    -
+      name: atom
+    -
+      name: balsamiq-mockups
+    -
+      name: bartender
+    -
+      name: breakaway
+    -
+      name: caffeine
+    -
+      name: calibre
+    -
+      name: consul
+    -
+      name: consul-web-ui
+    -
+      name: docker
+    -
+      name: docker-compose
+    -
+      name: docker-machine
+    -
+      name: dropbox
+    -
+      name: flux
+    -
+      name: garmin-express
+    -
+      name: google-chrome
+    -
+      name: google-earth-pro
+    -
+      name: gopro-studio
+    -
+      name: gpgtools
+    -
+      name: hipchat
+    -
+      name: iexplorer
+    -
+      name: kaleidoscope
+    -
+      name: knox
+    -
+      name: little-snitch
+    -
+      name: mitmproxy
+    -
+      name: logitech-myharmony
+    -
+      name: nomad
+    -
+      name: openra
+    -
+      name: otto
+    -
+      name: plug
+    -
+      name: rdm
+    -
+      name: screenflow
+    -
+      name: sequel-pro
+    -
+      name: skim
+    -
+      name: slack
+    -
+      name: skype
+    -
+      name: steam
+    -
+      name: synology-assistant
+    -
+      name: synology-cloud-station
+    -
+      name: terraform
+    -
+      name: torbrowser
+    -
+      name: tower
+    -
+      name: vagrant
+    -
+      name: vault
+    -
+      name: virtualbox
+    -
+      name: vlc

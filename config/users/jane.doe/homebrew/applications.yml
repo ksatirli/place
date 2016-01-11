@@ -1,0 +1,36 @@
+---
+  homebrew_applications:
+    -
+      name: awscli
+    -
+      name: fish
+    -
+      name: fwknop
+    -
+      name: go
+    -
+      name: graphviz
+    -
+      name: jq
+    -
+      name: keybase
+    -
+      name: lnav
+    -
+      name: mc
+    -
+      name: nodejs
+    -
+      name: nvm
+    -
+      name: postgresql
+    -
+      name: python
+    -
+      name: rpm
+    -
+      name: tmux
+    -
+      name: watchman
+    -
+      name: wget

@@ -1,0 +1,10 @@
+---
+
+user_config:
+  env:
+    # INFO: get this token from https://github.com/settings/tokens/new
+    # INFO: you will need the following permissions:
+    #   - repo
+    #   - public_repo
+    #   - user
+    HOMEBREW_GITHUB_API_TOKEN: CHANGEME
