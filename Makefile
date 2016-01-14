@@ -263,8 +263,7 @@ ansible-install:
 
 	@brew \
 		install \
-			ansible \
-				--HEAD
+			ansible
 
 
 .PHONY: ansible-uninstall
