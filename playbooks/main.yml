@@ -7,13 +7,13 @@
   gather_facts: true
 
   vars_files:
-    - ../config/chair.yml # loads as `config`
-    - ../config/users/{{ user }}/my_chair.yml # loads as `user_config`
+    - "../config/chair.yml" # loads as `config`
+    - "../config/users/{{ user }}/my_chair.yml" # loads as `user_config`
 
   tasks:
     # Homebrew: CLI applications
     - stat:
-        path: ./config/users/{{ user }}/homebrew/applications.yml
+        path: "./config/users/{{ user }}/homebrew/applications.yml"
       register: user_applications
 
     -
@@ -22,7 +22,7 @@
 
     # Homebrew: GUI applications
     - stat:
-        path: ./config/users/{{ user }}/homebrew/casks.yml
+        path: "./config/users/{{ user }}/homebrew/casks.yml"
       register: user_casks
 
     -
@@ -31,7 +31,7 @@
 
     # PIP: Packages
     - stat:
-        path: ./config/users/{{ user }}/pip-packages.yml
+        path: "./config/users/{{ user }}/pip-packages.yml"
       register: user_pip_packages
 
     -
@@ -40,7 +40,7 @@
 
     # Atom: Packages
     - stat:
-        path: ./config/users/{{ user }}/atom-packages.yml
+        path: "./config/users/{{ user }}/atom-packages.yml"
       register: user_atom_packages
 
     -
@@ -49,7 +49,7 @@
 
     # NPM: Packages
     - stat:
-        path: ./config/users/{{ user }}/npm-packages.yml
+        path: "./config/users/{{ user }}/npm-packages.yml"
       register: user_npm_packages
 
     -
@@ -58,7 +58,7 @@
 
     # OS X: defaults
     - stat:
-        path: ./config/users/{{ user }}/osx-defaults.yml
+        path: "./config/users/{{ user }}/osx-defaults.yml"
       register: user_osx_defaults
 
     -
