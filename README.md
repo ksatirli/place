@@ -4,21 +4,21 @@ Prepare your local OS X-based environment using [Ansible](http://www.ansible.com
 
 ## Prerequisites
 
-`Chair` requires a recently up-to-date copy of [Git](https://git-scm.com/). You are all set for this if your OS X is _10.9_ or higher.
+`Chair` requires a recently up-to-date copy of [Git](https://git-scm.com/). You are all set for this if your OS X is _10.8_ or higher.
 
 # Installation
 
-Clone this [Git repository](https://bitbucket.org/ksatirli/chair):
+Clone this [Git repository](https://bitbucket.org/cultivatedops/chair):
 
 ```
 # with SSH keys:
-git clone git@bitbucket.org:ksatirli/chair.git
+git clone git@bitbucket.org:cultivatedops/chair.git
 
 # with username and password:
-git clone https://username@bitbucket.org/ksatirli/chair.git
+git clone https://username@bitbucket.org/cultivatedops/chair.git
 ```
 
-Once done, change into the directory you cloned `Chair` into and attempt to run it by executing the `make` command.
+Once done, change into the directory you cloned `Chair` into and run it by executing the `make` command.
 
 The output should look something like this:
 
@@ -30,7 +30,7 @@ The output should look something like this:
    | |____  | | | | | (_| | | | | |   		
     \_____| |_| |_|  \__,_| |_| |_|   		
 
-    Prep your machine using Ansible and Brew.
+    Prep your machine using Ansible and Homebrew.
 
    Configuration:
      user:     		<your username>
