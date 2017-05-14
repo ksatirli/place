@@ -75,6 +75,7 @@ ANSIBLE_VAULT_FILE = "./config/users/$(user)/ansible-vault"
 ANSIBLE_ARG_EXTRA_VARS = --extra-vars="$(EXTRA_VARS_USER) $(EXTRA_VARS_PROFILE)"
 ANSIBLE_ARG_VAULT_FILE = --vault-password-file=$(ANSIBLE_VAULT_FILE)
 
+
 ###
  # Targets
 ###
@@ -88,7 +89,7 @@ help:
 	@echo "   | |____  | | | | | (_| | | | | |   		"
 	@echo "    \_____| |_| |_|  \__,_| |_| |_|   		"
 	@echo "                                      		"
-	@echo "    $(COLOR_BRIGHT)Prep your machine using Ansible and Brew.$(COLOR_MUTE)"
+	@echo "    $(COLOR_BRIGHT)Prep your machine using Ansible and Homebrew.$(COLOR_MUTE)"
 	@echo
 	@echo	"$(COLOR_BRIGHT)   Configuration:$(COLOR_OFF)"
 	@echo "     user:     		$(user)"
@@ -102,13 +103,23 @@ help:
 	@echo "     skip-tags: $(COLOR_MUTE)....................$(COLOR_OFF) sets the Ansible tags to skip"
 	@echo
 	@echo	"$(COLOR_BRIGHT)   Targets:$(COLOR_OFF)"
+	@echo "     make chair $(COLOR_MUTE).............,......$(COLOR_OFF) installs Xcode CLI tools, Homebrew and Ansible"
+	@echo "     make chair-install $(COLOR_MUTE)............$(COLOR_OFF) installs Xcode CLI tools, Homebrew and Ansible"
+	@echo "     make chair-cleanup $(COLOR_MUTE)............$(COLOR_OFF) installs Xcode CLI tools, Homebrew and Ansible"
+	@echo
+	@echo	"$(COLOR_BRIGHT)   Helper Targets:$(COLOR_OFF)"
+	@echo
+	@echo "     make help $(COLOR_MUTE).....................$(COLOR_OFF) displays this help screen"
 	@echo "     make install $(COLOR_MUTE)..................$(COLOR_OFF) installs Xcode CLI tools, Homebrew and Ansible"
+	@echo "     make uninstall $(COLOR_MUTE)................$(COLOR_OFF) uninstalls Xcode CLI tools, Homebrew and Ansible"
 	@echo "     make xcode-install $(COLOR_MUTE)............$(COLOR_OFF) installs Xcode CLI tools"
 	@echo "     make brew-install $(COLOR_MUTE).............$(COLOR_OFF) installs Homebrew"
 	@echo "     make brew-uninstall $(COLOR_MUTE)...........$(COLOR_OFF) uninstalls Homebrew"
 	@echo "     make brew-update $(COLOR_MUTE)..............$(COLOR_OFF) updates Homebrew to latest version"
 	@echo "     make brew-upgrade $(COLOR_MUTE).............$(COLOR_OFF) upgrades Homebrew Casks and packages to latest version"
-	@echo "     make ansible-install $(COLOR_MUTE)..........$(COLOR_OFF) installs Ansible 2.x from HEAD"
+	@echo "     make ansible-install $(COLOR_MUTE)..........$(COLOR_OFF) installs Ansible"
+	@echo "     make ansible-uninstall $(COLOR_MUTE)........$(COLOR_OFF) uninstalls Ansible"
+	@echo "     make ansible-install-roles $(COLOR_MUTE)....$(COLOR_OFF) installs Ansible Role(s)"
 	@echo
 
 
