@@ -1,12 +1,12 @@
 ---
-  
+
 -
   name: update Homebrew to latest version
   gather_facts: false
   hosts: localhost
 
   vars_files:
-    - ../config/users/{{ user }}/my_chair.yml # loads as `user_config`
+    - "../config/users/{{ user }}/my_chair.yml" # loads as `user_config`
 
   environment:
     HOMEBREW_GITHUB_API_TOKEN: "{{ user_config.env.HOMEBREW_GITHUB_API_TOKEN }}"

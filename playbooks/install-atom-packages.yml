@@ -2,7 +2,7 @@
 
 -
   name: get list of desired Atom packages
-  include_vars: ../config/users/{{ user }}/atom-packages.yml # loads as `atom_packages`
+  include_vars: "../config/users/{{ user }}/atom-packages.yml" # loads as `atom_packages`
   tags:
     - atom-install-packages
 

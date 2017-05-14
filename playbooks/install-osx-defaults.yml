@@ -2,7 +2,7 @@
 
 -
   name: get list of desired OS X defaults
-  include_vars: ../config/users/{{ user }}/osx-defaults.yml # loads as `osx_defaults` and `osx_defaults_targets`
+  include_vars: "../config/users/{{ user }}/osx-defaults.yml" # loads as `osx_defaults` and `osx_defaults_targets`
   tags:
     - osx-install-defaults
 

@@ -2,7 +2,7 @@
 
 -
   name: get list of desired PIP packages
-  include_vars: ../config/users/{{ user }}/pip-packages.yml # loads as `pip_packages`
+  include_vars: "../config/users/{{ user }}/pip-packages.yml" # loads as `pip_packages`
   tags:
     - pip-install-packages
 

@@ -2,7 +2,7 @@
 
 -
   name: get list of desired Homebrew applications
-  include_vars: ../config/users/{{ user }}/homebrew/applications.yml # loads as `homebrew_applications`
+  include_vars: "../config/users/{{ user }}/homebrew/applications.yml" # loads as `homebrew_applications`
   tags:
     - homebrew-install-applications
 

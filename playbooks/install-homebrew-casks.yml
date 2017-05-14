@@ -2,7 +2,7 @@
 
 -
   name: get list of desired Homebrew Casks
-  include_vars: ../config/users/{{ user }}/homebrew/casks.yml # loads as `homebrew_casks`
+  include_vars: "../config/users/{{ user }}/homebrew/casks.yml" # loads as `homebrew_casks`
   tags:
     - homebrew-install-casks
 

@@ -2,7 +2,7 @@
 
 -
   name: get list of desired NPM packages
-  include_vars: ../config/users/{{ user }}/npm-packages.yml # loads as `npm_packages`
+  include_vars: "../config/users/{{ user }}/npm-packages.yml" # loads as `npm_packages`
   tags:
     - npm-install-packages
 
