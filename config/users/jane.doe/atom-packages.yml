@@ -1,9 +1,0 @@
----
-  atom_packages:
-    # list packages you want to have installed here
-      -
-        name: editorconfig
-        state: install
-      -
-        name: metrics
-        state: uninstall

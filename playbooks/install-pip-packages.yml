@@ -8,6 +8,7 @@
 
 -
   name: install PIP packages
+  become: true
   pip:
     name: "{{ item.name }}"
     state: "{{ item.state | default('present') }}"
