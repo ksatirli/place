@@ -1,11 +1,11 @@
-ansible-binary ?= ansible
+ansible-binary ?= ansible-playbook
 ansible-version ?= 2.9.2
 ansible-verbosity ?=
 
 brew-base-url ?= https://raw.githubusercontent.com/Homebrew/install/master
 brew-installer-url ?= $(brew-base-url)/install
 brew-uninstaller-url ?= $(brew-base-url)/uninstall
-brew-installer-file ?= brew-installer-$(timestamp).rb"
+brew-installer-file ?= brew-installer-$(timestamp).rb
 brew-uninstaller-file ?= "brew-uninstaller.rb"
 
 color-off = \033[0m
@@ -16,6 +16,8 @@ pip-binary ?= pip3
 
 place-directory ?= $(HOME)/.config/my-place
 place-sign = 📍
+
+ruby-binary = ruby
 
 timestamp := $(shell date +'%Y%m%d_%H%M')
 
