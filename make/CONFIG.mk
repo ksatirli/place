@@ -15,10 +15,10 @@ color-bright = \033[1;37m
 pip-binary ?= pip3
 
 place-directory ?= $(HOME)/.config/my-place
-place-sign = "📍 "
+place-sign = 📍
 
 timestamp := $(shell date +'%Y%m%d_%H%M')
 
 user ?= $(USER)
 
-warning-sign = "⚠️ "
+warning-sign = ⚠️

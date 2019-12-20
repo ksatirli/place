@@ -20,7 +20,7 @@ help: overview # displays this help text
 .PHONY: overview
 overview:
 	@echo
-	@echo -e "$(color-bright)$(place-sign) Place.$(color-mute)"
+	@echo -e "$(color-bright)$(place-sign)  Place.$(color-mute)"
 	@echo
 	@echo
 	@echo	-e "$(color-bright)CONFIGURATION$(color-off)"

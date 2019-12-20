@@ -1,5 +1,5 @@
 	@echo
-	@echo "$(place-sign) Fetching Brew Installer"
+	@echo "$(place-sign)  Fetching Brew Installer"
 
 	@curl \
 		--silent \
@@ -8,7 +8,7 @@
 		"$(brew-installer-url)"
 
 	@echo
-	@echo "$(place-sign) Fetching Brew Uninstaller"
+	@echo "$(place-sign)  Fetching Brew Uninstaller"
 
 	@curl \
 		--silent \
