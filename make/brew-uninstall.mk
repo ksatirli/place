@@ -1,10 +1,16 @@
 .PHONY: brew-uninstall
 brew-uninstall: # uninstalls Brew
-ifeq (, $(shell which ruby))
-	$(error $(warning-sign)  ruby is not available in $$PATH))
-endif
-
+ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(warning-sign)  brew is not available in $$PATH)
+	$(info Nothing to uninstall)
+	@exit 0
+else ifeq ($(shell which $(ruby-binary) >/dev/null 2>&1; echo $$?), 1)
+	$(info $(warning-sign)  $(ruby-binary) is not available in $$PATH)
+	$(info Consider running make pip-install)
+	@exit 1
+else
 	@echo
 	@echo "$(place-sign)  Uninstalling Brew"
 	@echo
-	@ruby "$(place-directory)/$(brew-uninstaller-file)"
+	@$(ruby-binary) "$(place-directory)/$(brew-uninstaller-file)"
+endif
