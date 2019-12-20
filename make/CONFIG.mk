@@ -20,3 +20,5 @@ place-sign = "📍 "
 timestamp := $(shell date +'%Y%m%d_%H%M')
 
 user ?= $(USER)
+
+warning-sign = "⚠️ "
