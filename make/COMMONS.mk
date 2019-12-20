@@ -53,6 +53,7 @@ create-config-directory:
 	@mkdir -p "$(place-directory)"
 
 remove-config-directory:
-# In most runs, this target will not actually have to create $(place-directory),
-# as the target would be executed, in a normal flow, with the very first run.
-	@rm -rv "$(place-directory)"
+	@echo
+	@echo "$(place-sign)  Removing config directory \`$(place-directory)\`"
+	@echo
+	@rm -irv "$(place-directory)"
