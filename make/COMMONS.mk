@@ -51,3 +51,8 @@ create-config-directory:
 # In most runs, this target will not actually have to create $(place-directory),
 # as the target would be executed, in a normal flow, with the very first run.
 	@mkdir -p "$(place-directory)"
+
+remove-config-directory:
+# In most runs, this target will not actually have to create $(place-directory),
+# as the target would be executed, in a normal flow, with the very first run.
+	@rm -rv "$(place-directory)"
