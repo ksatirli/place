@@ -6,7 +6,6 @@ ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
 	@exit 0
 else ifeq ($(shell which $(ruby-binary) >/dev/null 2>&1; echo $$?), 1)
 	$(info $(warning-sign)  $(ruby-binary) is not available in $$PATH)
-	$(info Consider running make pip-install)
 	@exit 1
 else
 	@echo
