@@ -23,12 +23,12 @@ Once done, change into the directory you cloned `Chair` into and run it by execu
 The output should look something like this:
 
 ```
-     _____   _               _        		
-    / ____| | |             (_)       		
-   | |      | |__     __ _   _   _ __ 		
+     _____   _               _
+    / ____| | |             (_)
+   | |      | |__     __ _   _   _ __
    | |      | '_ \   / _` | | | | '__|
-   | |____  | | | | | (_| | | | | |   		
-    \_____| |_| |_|  \__,_| |_| |_|   		
+   | |____  | | | | | (_| | | | | |
+    \_____| |_| |_|  \__,_| |_| |_|
 
     Prep your machine using Ansible and Homebrew.
 

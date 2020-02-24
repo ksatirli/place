@@ -1,3 +1,8 @@
+color-off = \033[0m
+color-mute = \033[0;37m
+color-bright = \033[1;37m
+sign-place = 📍
+sign-warning = ⚠️
 ansible-binary ?= ansible-playbook
 ansible-version ?= 2.9.2
 ansible-verbosity ?=

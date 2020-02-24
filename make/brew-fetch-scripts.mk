@@ -1,24 +1,24 @@
 .PHONY: brew-fetch-scripts
 brew-fetch-scripts: # fetches Brew Installer and Uninstaller scripts
 ifeq ($(shell which curl2 >/dev/null 2>&1; echo $$?), 1)
-	$(info $(warning-sign)  curl is not available in $$PATH)
+	$(info $(sign-warning)  curl is not available in $$PATH)
 	@exit 1
 else
 	@echo
-	@echo "$(place-sign)  Fetching Brew Installer"
+	@echo "$(sign-place)  Fetching Brew Installer"
 
 	@curl \
 		--silent \
 		--location \
-		--output "$(place-directory)/$(brew-installer-file)" \
+		--output "$(base-directory)/$(brew-installer-file)" \
 		"$(brew-installer-url)"
 
 	@echo
-	@echo "$(place-sign)  Fetching Brew Uninstaller"
+	@echo "$(sign-place)  Fetching Brew Uninstaller"
 
 	@curl \
 		--silent \
 		--location \
-		--output "$(place-directory)/$(brew-uninstaller-file)" \
+		--output "$(base-directory)/$(brew-uninstaller-file)" \
 		"$(brew-uninstaller-url)"
 endif
