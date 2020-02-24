@@ -1,8 +1,14 @@
+base-directory ?= $(HOME)/.config/my-place
+brewfile ?= $(HOME)/.Brewfile
+npmfile ?= $(HOME)/.Npmfile
+vscodefile ?= = $(HOME)/.VisualStudioCodeExtensions
+
 color-off = \033[0m
 color-mute = \033[0;37m
 color-bright = \033[1;37m
 sign-place = 📍
 sign-warning = ⚠️
+
 ansible-binary ?= ansible-playbook
 ansible-version ?= 2.9.2
 ansible-verbosity ?=
@@ -13,19 +19,10 @@ brew-uninstaller-url ?= $(brew-base-url)/uninstall
 brew-installer-file ?= brew-installer-$(timestamp).rb
 brew-uninstaller-file ?= "brew-uninstaller.rb"
 
-color-off = \033[0m
-color-mute = \033[0;37m
-color-bright = \033[1;37m
-
 pip-binary ?= pip3
-
-place-directory ?= $(HOME)/.config/my-place
-place-sign = 📍
 
 ruby-binary = ruby
 
 timestamp := $(shell date +'%Y%m%d_%H%M')
 
 user ?= $(USER)
-
-warning-sign = ⚠️

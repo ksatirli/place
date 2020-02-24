@@ -25,7 +25,9 @@ overview:
 	@echo
 	@echo	-e "$(color-bright)CONFIGURATION$(color-off)"
 	@echo -e "    $(color-bright)user:$(color-off)              $(user)"
-	@echo -e "    $(color-bright)home:$(color-off)              $(place-directory)"
+	@echo -e "    $(color-bright)home:$(color-off)              $(base-directory)"
+	@echo -e "    $(color-bright)brewfile:$(color-off)          $(brewfile)"
+	@echo -e "    $(color-bright)npmfile:$(color-off)           $(npmfile)"
 
 ifdef only-tags
 	@echo -e "    $(color-bright)only-tags:$(color-off)         $(only-tags)"
@@ -48,12 +50,18 @@ ifdef pip-binary
 endif
 
 create-config-directory:
-# In most runs, this target will not actually have to create $(place-directory),
+# In most runs, this target will not actually have to create $(base-directory),
 # as the target would be executed, in a normal flow, with the very first run.
-	@mkdir -p "$(place-directory)"
+	@mkdir -p "$(base-directory)"
+
+.PHONY: open-config-directory
+open-config-directory:
+# In most runs, this target will not actually have to create $(base-directory),
+# as the target would be executed, in a normal flow, with the very first run.
+	@open "$(base-directory)"
 
 remove-config-directory:
 	@echo
-	@echo "$(place-sign)  Removing config directory \`$(place-directory)\`"
+	@echo "$(sign-place)  Removing config directory \`$(base-directory)\`"
 	@echo
-	@rm -irv "$(place-directory)"
+	@rm -irv "$(base-directory)"
