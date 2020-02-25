@@ -18,6 +18,7 @@ brew-installer-url ?= $(brew-base-url)/install
 brew-uninstaller-url ?= $(brew-base-url)/uninstall
 brew-installer-file ?= brew-installer-$(timestamp).rb
 brew-uninstaller-file ?= "brew-uninstaller.rb"
+brew-prune-days ?= 1
 
 pip-binary ?= pip3
 
