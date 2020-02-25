@@ -1,0 +1,19 @@
+---
+
+  -
+    name: setting your Place up
+    hosts: localhost
+    strategy: free
+    gather_facts: true
+
+    vars_files:
+      - "../config/place.yml" # loads as `config`
+      - "../config/users/{{ user }}/my_place.yml" # loads as `user_config`
+
+    # tasks:
+    #   # Homebrew: CLI applications
+    #   - stat:
+    #       path: "../config/users/{{ user }}/homebrew/applications.yml"
+    #     register: user_applications
+    #     tags:
+    #       - homebrew-install-applications
