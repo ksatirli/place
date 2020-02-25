@@ -6,7 +6,7 @@ Prepare your local OS X-based environment using [Ansible](http://www.ansible.com
 
 `Chair` requires a recently up-to-date copy of [Git](https://git-scm.com/). You are all set for this if your OS X is _10.8_ or higher.
 
-# Installation
+## Installation
 
 Clone this [Git repository](https://bitbucket.org/cultivatedops/chair):
 
@@ -48,7 +48,7 @@ Please note: if you already have one of the three tools installed already, you c
 * `make brew-install` to _only_ install Homebrew
 * `make ansible-install` to _only_ install Ansible 2.x
 
-# Usage
+## Usage
 
 `Chair` uses a `Makefile` to simplify running of various commands. In order to _build_ your `Chair`, you would run `make chair`.
 
@@ -62,7 +62,7 @@ Regardless of the user profile passed, `Chair` will look for a (fitting) user pr
 
 Keep in mind that `Chair` may need to download large amounts of data. As such, it is best to run `Chair` when you are not on a mobile data connection.
 
-# Credits
+## Credits
 
 `Chair` was initially created by [Kerim Satirli](https://www.linkedin.com/in/kerimsatirli) with input from [Yury Liavitski](https://www.linkedin.com/in/yuryliavitski).
 
