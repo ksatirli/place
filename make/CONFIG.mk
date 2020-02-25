@@ -1,6 +1,6 @@
 base-directory ?= $(HOME)/.config/my-place
 brewfile ?= $(HOME)/.Brewfile
-npmfile ?= $(HOME)/.Npmfile
+npmfile ?= $(HOME)/.npmfile
 vscodefile ?= = $(HOME)/.VisualStudioCodeExtensions
 
 color-off = \033[0m
