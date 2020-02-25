@@ -1,6 +1,6 @@
 .PHONY: brew-fetch-scripts
 brew-fetch-scripts: # fetches Brew Installer and Uninstaller scripts
-ifeq ($(shell which curl2 >/dev/null 2>&1; echo $$?), 1)
+ifeq ($(shell which curl >/dev/null 2>&1; echo $$?), 1)
 	$(info $(sign-warning)  curl is not available in $$PATH)
 	@exit 1
 else
