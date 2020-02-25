@@ -1,7 +1,7 @@
 base-directory ?= $(HOME)/.config/my-place
 brewfile ?= $(HOME)/.Brewfile
 npmfile ?= $(HOME)/.npmfile
-vscodefile ?= = $(HOME)/.VisualStudioCodeExtensions
+vscodefile ?= $(HOME)/.VisualStudioCodeExtensions
 
 color-off = \033[0m
 color-mute = \033[0;37m
@@ -10,7 +10,7 @@ sign-place = 📍
 sign-warning = ⚠️
 
 ansible-binary ?= ansible-playbook
-ansible-version ?= 2.9.2
+ansible-version ?= 2.9.4
 ansible-verbosity ?=
 
 brew-base-url ?= https://raw.githubusercontent.com/Homebrew/install/master
