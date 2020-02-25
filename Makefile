@@ -1,4 +1,4 @@
-# Makefile for 📍 Place
+# Makefile for Place
 
 ### configuration
 MAKEFLAGS=--no-builtin-rules --warn-undefined-variables
