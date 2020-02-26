@@ -4,8 +4,8 @@ clear:
 
 .SILENT .PHONY: help
 help: overview # displays this help text
-	@echo
-	@echo -e	"$(color-bright)OPTIONS$(color-off)"
+	$(info )
+	$(info $(color-bright)OPTIONS$(color-off))
 
 	grep \
 		--context=0 \
@@ -15,38 +15,38 @@ help: overview # displays this help text
 			"(^[a-z-]+){1}: ?(?:[a-z-])* #" $(MAKEFILE_LIST) | \
 	awk 'BEGIN {FS = ":.*?# "}; {printf "  \033[1m  %s\033[0m;%s\n", $$1, $$2}' | \
 	column -c2 -s ";" -t
-	@echo
+	$(info )
 
 .PHONY: overview
 overview:
-	@echo
-	@echo -e "$(color-bright)$(sign-place)  Place.$(color-mute)"
-	@echo
-	@echo
-	@echo	-e "$(color-bright)CONFIGURATION$(color-off)"
-	@echo -e "    $(color-bright)user:$(color-off)              $(user)"
-	@echo -e "    $(color-bright)home:$(color-off)              $(base-directory)"
-	@echo -e "    $(color-bright)brewfile:$(color-off)          $(brewfile)"
-	@echo -e "    $(color-bright)npmfile:$(color-off)           $(npmfile)"
+	$(info )
+	$(info $(color-bright)$(sign-place)  Place.$(color-mute))
+	$(info )
+	$(info )
+	$(info $(color-bright)CONFIGURATION$(color-off))
+	$(info     $(color-bright)user:$(color-off)              $(user))
+	$(info     $(color-bright)home:$(color-off)              $(base-directory))
+	$(info     $(color-bright)dotfiles:$(color-off)          $(dotfiles))
+	$(info     $(color-bright)brewfile:$(color-off)          $(brewfile))
+	$(info     $(color-bright)npmfile:$(color-off)           $(npmfile))
 
 ifdef only-tags
-	@echo -e "    $(color-bright)only-tags:$(color-off)         $(only-tags)"
+	$(info     $(color-bright)only-tags:$(color-off)         $(only-tags))
 endif
 
 ifdef skip-tags
-	@echo -e "    $(color-bright)skip-tags:$(color-off) 	       $(skip-tags)"
+	$(info     $(color-bright)skip-tags:$(color-off) 	       $(skip-tags))
 endif
 
 ifdef verbosity
-	@echo -e "    $(color-bright)verbosity:$(color-off) 	      $(verbosity)"
+	$(info     $(color-bright)verbosity:$(color-off) 	      $(verbosity))
 endif
 
 ifdef ansible-binary
-	@echo -e "    $(color-bright)ansible-binary:$(color-off)    $(ansible-binary)"
+	$(info     $(color-bright)ansible-binary:$(color-off)    $(ansible-binary))
 endif
 
 ifdef pip-binary
-	@echo -e "    $(color-bright)pip-binary:$(color-off)        $(pip-binary)"
 endif
 
 create-config-directory:
@@ -61,7 +61,7 @@ open-config-directory:
 	@open "$(base-directory)"
 
 remove-config-directory:
-	@echo
-	@echo "$(sign-place)  Removing config directory \`$(base-directory)\`"
-	@echo
 	@rm -irv "$(base-directory)"
+	$(info )
+	$(info $(sign-place)  Removing config directory \`$(base-directory)\`)
+	$(info )
