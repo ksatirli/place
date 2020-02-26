@@ -1,8 +1,8 @@
-base-directory ?= $(HOME)/.config/my-place
+base-directory ?= $(HOME)/.place
 brewfile ?= $(HOME)/.Brewfile
-dotfiles ?= $(HOME)/.dotfiles/
+dotfiles ?= $(HOME)/.dotfiles
 dotfiles_repository ?= git@github.com:$(user)/dotfiles.git
-dotfiles_excludes ?= $(dotfiles).config/rsync/excludes
+dotfiles_excludes ?= $(dotfiles)/.config/rsync/excludes
 npmfile ?= $(HOME)/.npmfile
 vscodefile ?= $(HOME)/.VisualStudioCodeExtensions
 

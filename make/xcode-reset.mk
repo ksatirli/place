@@ -5,7 +5,7 @@ ifeq ($(shell which xcode-select >/dev/null 2>&1; echo $$?), 1)
 	@exit 1
 else
 	$(info $(sign-place)  Resetting Xcode CLI Tools)
-	$(warning $(color-bright)$(sign-warning)  This operation requires root privilege$(color-off))
+	$(info $(color-bright)$(sign-warning)  This operation requires root privilege$(color-off))
 	@sudo xcode-select \
 		--reset
 endif

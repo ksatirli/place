@@ -5,11 +5,8 @@ ifeq ($(shell which $(pip-binary) >/dev/null 2>&1; echo $$?), 1)
 	$(info Consider running make pip-install)
 	@exit 1
 else
-	@echo
-	@echo "$(sign-place)  Uninstalling Ansible with \`$(pip-binary)\`"
-	@echo
+	$(info $(sign-place)  Uninstalling Ansible with `$(pip-binary)`)
 	@$(pip-binary) \
 		uninstall \
 			ansible
-	@echo
 endif

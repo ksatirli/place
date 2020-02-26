@@ -9,7 +9,7 @@ else ifeq ("$(wildcard $(brewfile))","")
 	@exit 1
 else
 	$(info $(sign-place) Installing Brews, Taps, and Casks from Brewfile)
-	$(warning $(color-bright)$(sign-warning)  Some operations might require root privilege$(color-off))
+	$(info $(color-bright)$(sign-warning)  Some operations might require root privilege$(color-off))
 	@brew \
 		bundle \
 			--file="$(brewfile)"
