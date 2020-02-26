@@ -23,32 +23,35 @@ overview:
 	$(info )
 	$(info $(color-bright)CONFIGURATION$(color-off))
 	$(info )
-	$(info $(color-bright)user:$(color-off)              $(user))
-	$(info $(color-bright)home:$(color-off)              $(base-directory))
-	$(info $(color-bright)dotfiles:$(color-off)          $(dotfiles))
-	$(info $(color-bright)brewfile:$(color-off)          $(brewfile))
-	$(info $(color-bright)npmfile:$(color-off)           $(npmfile))
+	$(info $(color-bright)user:$(color-off)             $(user))
+	$(info $(color-bright)home:$(color-off)             $(base-directory))
+	$(info $(color-bright)brewfile:$(color-off)         $(brewfile))
+	$(info $(color-bright)npmfile:$(color-off)          $(npmfile))
+	$(info $(color-bright)dotfiles:$(color-off)         $(dotfiles))
+	$(info $(color-bright)  source :$(color-off)	  $(dotfiles_repository))
+	$(info $(color-bright)  excludes:$(color-off)	  $(dotfiles_excludes))
+	$(info )
 
 ifdef only-tags
-	$(info $(color-bright)only-tags:$(color-off)         $(only-tags))
+	$(info $(color-bright)only-tags:$(color-off)        $(only-tags))
 endif
 
 ifdef skip-tags
-	$(info $(color-bright)skip-tags:$(color-off) 	   $(skip-tags))
+	$(info $(color-bright)skip-tags:$(color-off)        $(skip-tags))
 endif
 
 ifdef verbosity
-	$(info $(color-bright)verbosity:$(color-off) 	   $(verbosity))
+	$(info $(color-bright)verbosity:$(color-off)        $(verbosity))
 endif
 
 ifdef ansible-binary
-	$(info $(color-bright)ansible-binary:$(color-off)    $(ansible-binary))
+	$(info $(color-bright)ansible-binary:$(color-off)   $(ansible-binary))
 endif
 
 ifdef pip-binary
-	$(info $(color-bright)pip-binary:$(color-off)        $(pip-binary))
+	$(info $(color-bright)pip-binary:$(color-off)       $(pip-binary))
 endif
-
+	$(info )
 	@exit 0
 
 create-config-directory:
