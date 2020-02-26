@@ -47,6 +47,7 @@ ifdef ansible-binary
 endif
 
 ifdef pip-binary
+	$(info     $(color-bright)pip-binary:$(color-off)        $(pip-binary))
 endif
 
 create-config-directory:
