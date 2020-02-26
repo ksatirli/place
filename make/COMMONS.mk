@@ -29,6 +29,7 @@ overview:
 	$(info     $(color-bright)dotfiles:$(color-off)          $(dotfiles))
 	$(info     $(color-bright)brewfile:$(color-off)          $(brewfile))
 	$(info     $(color-bright)npmfile:$(color-off)           $(npmfile))
+	@exit 0
 
 ifdef only-tags
 	$(info     $(color-bright)only-tags:$(color-off)         $(only-tags))
@@ -53,7 +54,8 @@ endif
 create-config-directory:
 # In most runs, this target will not actually have to create $(base-directory),
 # as the target would be executed, in a normal flow, with the very first run.
-	@mkdir -p "$(base-directory)"
+	@mkdir \
+		-p "$(base-directory)"
 
 .PHONY: open-config-directory
 open-config-directory:
@@ -62,7 +64,11 @@ open-config-directory:
 	@open "$(base-directory)"
 
 remove-config-directory:
-	@rm -irv "$(base-directory)"
 	$(info )
 	$(info $(sign-place)  Removing config directory \`$(base-directory)\`)
 	$(info )
+	@rm \
+		-i \
+		-r \
+		-v \
+			"$(base-directory)"
