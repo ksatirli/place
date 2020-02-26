@@ -52,6 +52,10 @@ ifdef pip-binary
 	$(info $(color-bright)pip-binary:$(color-off)       $(pip-binary))
 endif
 	$(info )
+
+	echo $(only-tags-arg)
+	echo $(skip-tags-arg)
+	echo $(ansible-verbosity-arg)
 	@exit 0
 
 create-config-directory:
@@ -73,3 +77,50 @@ remove-config-directory:
 		-r \
 		-v \
 			"$(base-directory)"
+
+.PHONY: open-user-directory
+open-user-directory:
+	@open "$(user-directory)"
+
+.PHONY check-for-brew:
+check-for-brew:
+ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  brew is not available in $$PATH)
+	$(info Consider running make brew-install)
+	@exit 1
+endif
+
+.PHONY check-for-code:
+check-for-code:
+ifeq ($(shell which code 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  code is not available in $$PATH)
+	@exit 1
+endif
+
+.PHONY check-for-curl:
+check-for-curl:
+ifeq ($(shell which curl 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  curl is not available in $$PATH)
+	@exit 1
+endif
+
+.PHONY check-for-npm:
+check-for-npm:
+ifeq ($(shell which npm 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  npm is not available in $$PATH)
+	@exit 1
+endif
+
+.PHONY check-for-ruby:
+check-for-ruby:
+ifeq ($(shell which $(ruby-binary) 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  $(ruby-binary) is not available in $$PATH)
+	@exit 1
+endif
+
+.PHONY check-for-xcode-select:
+check-for-xcode-select:
+ifeq ($(shell which curl 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  xcode-select is not available in $$PATH)
+	@exit 1
+endif

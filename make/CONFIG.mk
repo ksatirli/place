@@ -1,4 +1,5 @@
 base-directory ?= $(HOME)/.place
+user-directory ?= $(HOME)/.config/place
 brewfile ?= $(HOME)/.Brewfile
 dotfiles ?= $(HOME)/.dotfiles
 dotfiles_repository ?= git@github.com:$(user)/dotfiles.git

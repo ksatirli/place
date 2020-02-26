@@ -1,10 +1,6 @@
-.PHONY vscode-install-extensions:
-vscode-install-extensions: # installs Visual Studio Code Extensions
-ifeq ($(shell which code 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  code is not available in $$PATH)
-	$(info Consider installing Visual Studio Code)
-	@exit 1
-else ifeq ("$(wildcard $(vscodefile))","")
+.PHONY install-code-extensions:
+install-code-extensions: check-for-code # installs Visual Studio Code Extensions
+ifeq ("$(wildcard $(vscodefile))","")
 	$(info $(sign-warning)  No vscodefile available at $(vscodefile))
 	@exit 1
 else
