@@ -8,7 +8,6 @@ else ifeq ("$(wildcard $(npmfile))","")
 	$(info $(sign-warning)  No npmfile available at $(npmfile))
 	@exit 1
 else
-	$(info )
 	$(info $(sign-place)  Installing global NPM Packages)
 	$(info )
 	@$(foreach package, $(shell cat "$(npmfile)"), \
