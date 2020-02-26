@@ -8,10 +8,12 @@ else ifeq ("$(wildcard $(brewfile))","")
 	$(info $(sign-warning)  No Brewfile available at $(brewfile))
 	@exit 1
 else
-	@echo
-	@echo "$(sign-place) Installing Brews, Taps, and Casks from Brewfile"
-	@echo
-	@echo -e "$(color-bright)$(sign-warning)  Some operations might require root privilege$(color-off)"
-	@echo
-	@brew bundle --file=$(brewfile)
+	$(info )
+	$(info $(sign-place) Installing Brews, Taps, and Casks from Brewfile)
+	$(info )
+	$(warning $(color-bright)$(sign-warning)  Some operations might require root privilege$(color-off))
+	$(info )
+	@brew \
+		bundle \
+			--file="$(brewfile)"
 endif

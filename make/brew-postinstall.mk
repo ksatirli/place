@@ -5,9 +5,11 @@ ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
 	$(info Nothing to uninstall)
 	@exit 0
 else
-	@echo
-	@echo "$(sign-place)  Disabling Brew Analytics"
-	@echo
-	@brew analytics off
-	@brew analytics state
+	$(info )
+	$(info $(sign-place)  Disabling Brew Analytics)
+	$(info )
+	@brew \
+		analytics off
+	@brew \
+		analytics state
 endif

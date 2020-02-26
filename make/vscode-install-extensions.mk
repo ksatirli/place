@@ -8,9 +8,9 @@ else ifeq ("$(wildcard $(vscodefile))","")
 	$(info $(sign-warning)  No vscodefile available at $(vscodefile))
 	@exit 1
 else
-	@echo
-	@echo "$(sign-place)  Installing Visual Studio Code Extensions"
-	@echo
+	$(info )
+	$(info $(sign-place)  Installing Visual Studio Code Extensions)
+	$(info )
 	@$(foreach extension, $(shell cat "$(vscodefile)"), \
 		code \
 			--force \

@@ -3,9 +3,9 @@ brewfile ?= $(HOME)/.Brewfile
 npmfile ?= $(HOME)/.npmfile
 vscodefile ?= $(HOME)/.VisualStudioCodeExtensions
 
-color-off = \033[0m
-color-mute = \033[0;37m
-color-bright = \033[1;37m
+color-off = $(shell tput sgr0)
+color-mute = $(shell tput dim)
+color-bright = $(shell tput bold)
 sign-place = 📍
 sign-warning = ⚠️
 

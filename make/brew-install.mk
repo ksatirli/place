@@ -4,8 +4,8 @@ ifeq ($(shell which $(ruby-binary) >/dev/null 2>&1; echo $$?), 1)
 	$(info $(sign-warning)  $(ruby-binary) is not available in $$PATH)
 	@exit 1
 else
-	@echo
-	@echo "$(sign-place)  Installing Brew"
-	@echo
+	$(info )
+	$(info $(sign-place)  Installing Brew)
+	$(info )
 	@$(ruby-binary) "$(base-directory)/$(brew-installer-file)"
 endif
