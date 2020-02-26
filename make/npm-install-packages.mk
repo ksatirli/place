@@ -9,7 +9,6 @@ else ifeq ("$(wildcard $(npmfile))","")
 	@exit 1
 else
 	$(info $(sign-place)  Installing global NPM Packages)
-	$(info )
 	@$(foreach package, $(shell cat "$(npmfile)"), \
 		npm \
 			install \

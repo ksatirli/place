@@ -18,7 +18,6 @@ help: overview # displays this help text
 
 .PHONY: overview
 overview:
-	$(info )
 	$(info $(color-bright)$(sign-place)  Place.$(color-mute))
 	$(info )
 	$(info )
@@ -35,11 +34,11 @@ ifdef only-tags
 endif
 
 ifdef skip-tags
-	$(info $(color-bright)skip-tags:$(color-off) 	       $(skip-tags))
+	$(info $(color-bright)skip-tags:$(color-off) 	   $(skip-tags))
 endif
 
 ifdef verbosity
-	$(info $(color-bright)verbosity:$(color-off) 	      $(verbosity))
+	$(info $(color-bright)verbosity:$(color-off) 	   $(verbosity))
 endif
 
 ifdef ansible-binary
@@ -50,7 +49,6 @@ ifdef pip-binary
 	$(info $(color-bright)pip-binary:$(color-off)        $(pip-binary))
 endif
 
-	$(info )
 	@exit 0
 
 create-config-directory:
@@ -67,7 +65,6 @@ open-config-directory:
 
 remove-config-directory:
 	$(info $(sign-place)  Removing config directory \`$(base-directory)\`)
-	$(info )
 	@rm \
 		-i \
 		-r \

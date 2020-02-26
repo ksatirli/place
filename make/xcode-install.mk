@@ -5,7 +5,6 @@ ifeq ($(shell which xcode-select >/dev/null 2>&1; echo $$?), 1)
 	@exit 1
 else
 	$(info $(sign-place)  Starting Xcode CLI Tools Installer)
-	$(info )
 	@-xcode-select \
 		--install
 endif

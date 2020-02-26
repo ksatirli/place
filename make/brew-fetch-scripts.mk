@@ -4,18 +4,14 @@ ifeq ($(shell which curl >/dev/null 2>&1; echo $$?), 1)
 	$(info $(sign-warning)  curl is not available in $$PATH)
 	@exit 1
 else
-	$(info )
 	$(info $(sign-place)  Fetching Brew Installer)
-
 	@curl \
 		--silent \
 		--location \
 		--output "$(base-directory)/$(brew-installer-file)" \
 		"$(brew-installer-url)"
 
-	$(info )
 	$(info $(sign-place)  Fetching Brew Uninstaller)
-
 	@curl \
 		--silent \
 		--location \

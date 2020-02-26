@@ -5,8 +5,6 @@ ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
 	$(info Consider running make brew-install)
 	@exit 1
 else
-	$(info )
 	$(info $(sign-place)  Upgrading Brew)
-	$(info )
 	@brew upgrade
 endif

@@ -5,6 +5,5 @@ ifeq ($(shell which $(ruby-binary) >/dev/null 2>&1; echo $$?), 1)
 	@exit 1
 else
 	$(info $(sign-place)  Installing Brew)
-	$(info )
 	@$(ruby-binary) "$(base-directory)/$(brew-installer-file)"
 endif
