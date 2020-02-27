@@ -1,8 +1,8 @@
-.PHONY install-npm-packages:
-install-npm-packages: # installs global NPM Packages
+.PHONY gems:
+gems: check-for-ruby check-for-ansible # installs Ruby Gems
 	@$(ansible-binary) \
 		--skip-tags="$(skip-tags)" \
 		--extra-vars="$(extra-vars)" \
-		--tags="install-npm-packages" \
+		--tags="install-ruby-gems" \
 		$(verbosity) \
 		"ansible/main.yml"

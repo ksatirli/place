@@ -1,8 +1,8 @@
-.PHONY set-defaults:
-set-defaults: check-for-ansible # sets macOS Defaults
+.PHONY pip-packages:
+pip-packages: check-for-ansible # installs pip Packages
 	@$(ansible-binary) \
 		--skip-tags="$(skip-tags)" \
 		--extra-vars="$(extra-vars)" \
-		--tags="set-macos-defaults" \
+		--tags="install-pip-packages" \
 		$(verbosity) \
 		"ansible/main.yml"

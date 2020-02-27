@@ -1,5 +1,5 @@
-.PHONY uninstall-ansible:
-uninstall-ansible: check-for-piip # uninstalls Ansible
+.PHONY ansible-uninstall:
+ansible-uninstall: check-for-pip # uninstalls Ansible
 	$(info $(sign-place)  Uninstalling Ansible with `$(pip-binary)`)
 	@$(pip-binary) \
 		uninstall \
