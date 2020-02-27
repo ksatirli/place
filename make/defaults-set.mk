@@ -1,8 +1,8 @@
 .PHONY set-defaults:
-set-defaults: # Sets macOS Defaults
-ifeq ("$(wildcard $(defaultsfile))","")
-	$(info $(sign-warning)  No Defaultsfile found at $(defaultsfile))
-	@exit 1
-else
-
-endif
+set-defaults: check-for-ansible # sets macOS Defaults
+	@$(ansible-binary) \
+		--skip-tags="$(skip-tags)" \
+		--extra-vars="$(extra-vars)" \
+		--tags="set-macos-defaults" \
+		$(verbosity) \
+		"ansible/main.yml"
