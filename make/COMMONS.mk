@@ -13,7 +13,10 @@ help: overview # displays this help text
 		--no-filename \
 			"(^[a-z-]+){1}: ?(?:[a-z-])* #" $(MAKEFILE_LIST) | \
 	awk 'BEGIN {FS = ":.*?# "}; {printf "\033[1m%s\033[0m;%s\n", $$1, $$2}' | \
-	column -c2 -s ";" -t
+	column \
+		-c2 \
+		-s ";" \
+		-t
 	$(info )
 
 .PHONY: overview
@@ -26,8 +29,6 @@ overview:
 	$(info $(color-bright)user:$(color-off)             $(user))
 	$(info $(color-bright)home:$(color-off)             $(base-directory))
 	$(info $(color-bright)brewfile:$(color-off)         $(brewfile))
-	$(info $(color-bright)npmfile:$(color-off)          $(npmfile))
-	$(info $(color-bright)dotfiles:$(color-off)         $(dotfiles))
 	$(info $(color-bright)  source :$(color-off)	  $(dotfiles_repository))
 	$(info $(color-bright)  excludes:$(color-off)	  $(dotfiles_excludes))
 	$(info )

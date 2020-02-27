@@ -1,4 +1,0 @@
----
-  # - # Atom package manager role, see https://galaxy.ansible.com/detail#/role/5898
-  #   src: jgkim.atom
-  #   name: atom-packages

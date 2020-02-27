@@ -1,6 +1,0 @@
----
-config:
-  paths:
-    roles: ./roles
-  homebrew:
-    appdir: "/Applications"
