@@ -21,7 +21,7 @@ help: overview # displays this help text
 
 .PHONY: overview
 overview:
-	$(info $(color-bright)$(sign-place)  Place.$(color-mute))
+	$(info $(color-bright)$(sign-place)  Place.$(color-off))
 	$(info )
 	$(info )
 	$(info $(color-bright)CONFIGURATION$(color-off))
@@ -31,10 +31,6 @@ overview:
 	$(info $(color-bright)base directory:$(color-off)	  $(base-directory))
 	$(info $(color-bright)user directory:$(color-off)	  $(user-directory))
 	$(info )
-
-ifdef only-tags
-	$(info $(color-bright)only-tags:$(color-off)        $(only-tags))
-endif
 
 ifdef skip-tags
 	$(info $(color-bright)skip-tags:$(color-off)        $(skip-tags))
@@ -86,7 +82,7 @@ ifeq ($(shell which $(ansible-binary) 2>/dev/null 2>&1; echo $$?), 1)
 endif
 
 .PHONY check-for-brew:
-check-for-brew:
+check-for-brew: check-for-ruby
 ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
 	$(info $(sign-warning)  brew is not available in $$PATH)
 	$(info Consider running make brew-install)

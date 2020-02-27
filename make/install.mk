@@ -1,4 +1,11 @@
-.PHONY install:
-install: overview install-xcode install-brew postinstall-brew install-ansible # installs Xcode CLI Tools, Brew, and Ansible
+###
+#	Utilities
+###
+.PHONY install-tools:
+install-tools: overview xcode brew postinstall-brew ansible # installs Xcode CLI Tools, Brew, and Ansible
 
-# TODO: the help text for this file does not show up yet
+###
+#	User-facing targets
+###
+.PHONY install:
+install: install-tools # installs Xcode CLI Tools, Brew, and Ansible

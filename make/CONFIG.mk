@@ -1,10 +1,9 @@
 base-directory ?= $(HOME)/.cache/place
 user-directory ?= $(HOME)/.config/place
 brewfile ?= $(HOME)/.Brewfile
-vscodefile ?= $(HOME)/.VisualStudioCodeExtensions
+vscodeextensionsfile ?= $(HOME)/.VisualStudioCodeExtensions
 
 color-off = $(shell tput sgr0)
-color-mute = $(shell tput dim)
 color-bright = $(shell tput bold)
 sign-place = 📍
 sign-warning = ⚠️
@@ -12,7 +11,6 @@ sign-warning = ⚠️
 ansible-binary ?= ansible-playbook
 ansible-version ?= 2.9.4
 extra-vars ?= user_directory=$(user-directory)
-only-tags ?=
 skip-tags ?=
 verbosity ?=
 
