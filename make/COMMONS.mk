@@ -52,10 +52,6 @@ ifdef pip-binary
 	$(info $(color-bright)pip-binary:$(color-off)       $(pip-binary))
 endif
 	$(info )
-
-	echo $(only-tags-arg)
-	echo $(skip-tags-arg)
-	echo $(ansible-verbosity-arg)
 	@exit 0
 
 create-config-directory:
@@ -82,6 +78,13 @@ remove-config-directory:
 open-user-directory:
 	@open "$(user-directory)"
 
+.PHONY check-for-ansible:
+check-for-ansible:
+ifeq ($(shell which $(ansible-binary) 2>/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  $(ansible-binary) is not available in $$PATH)
+	@exit 1
+endif
+
 .PHONY check-for-brew:
 check-for-brew:
 ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
@@ -101,13 +104,6 @@ endif
 check-for-curl:
 ifeq ($(shell which curl 2>/dev/null 2>&1; echo $$?), 1)
 	$(info $(sign-warning)  curl is not available in $$PATH)
-	@exit 1
-endif
-
-.PHONY check-for-npm:
-check-for-npm:
-ifeq ($(shell which npm 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  npm is not available in $$PATH)
 	@exit 1
 endif
 
