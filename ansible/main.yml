@@ -26,3 +26,8 @@
       include: set-macos-defaults.yml
       tags:
         - set-macos-defaults
+
+    -
+      include: sync-dotfiles.yml
+      tags:
+        - sync-dotfiles
