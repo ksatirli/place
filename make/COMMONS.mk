@@ -32,10 +32,6 @@ overview:
 	$(info $(color-bright)user directory:$(color-off)	  $(user-directory))
 	$(info )
 
-ifdef skip-tags
-	$(info $(color-bright)skip-tags:$(color-off)        $(skip-tags))
-endif
-
 ifdef verbosity
 	$(info $(color-bright)verbosity:$(color-off)        $(verbosity))
 endif

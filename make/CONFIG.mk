@@ -11,7 +11,6 @@ sign-warning = ⚠️
 ansible-binary ?= ansible-playbook
 ansible-version ?= 2.9.4
 extra-vars ?= user_directory=$(user-directory)
-skip-tags ?=
 verbosity ?=
 
 brew-base-url ?= https://raw.githubusercontent.com/Homebrew/install/master
