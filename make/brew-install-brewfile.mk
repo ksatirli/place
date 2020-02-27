@@ -1,5 +1,5 @@
-.PHONY brew-install-brewfile:
-brew-install-brewfile: # installs Brews, Taps, and Casks from user-specified Brewfile
+.PHONY brewfile:
+brewfile: # installs Brews, Taps, and Casks from user-specified Brewfile
 ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
 	$(info $(sign-warning)  brew is not available in $$PATH)
 	$(info Consider running make brew-install)
