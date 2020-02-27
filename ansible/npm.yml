@@ -6,9 +6,11 @@
     path: "{{ user_directory }}/npm-packages.yml"
   register: user_npm_packages
 
-- fail:
+-
+  name: Check if NPM packages file exists
+  fail:
     msg: NPM packages file does not exist at expected location
-  when: user_npm_packages.stat.exists == false
+  when: not user_npm_packages.stat.exists
 
 -
   name: Parsing NPM packages file

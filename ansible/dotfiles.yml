@@ -6,9 +6,11 @@
     path: "{{ user_directory }}/dotfiles.yml"
   register: user_dotfiles
 
-- fail:
+-
+  name: Check if Dotfiles configuration exists
+  fail:
     msg: Dotfiles configuration does not exist at expected location
-  when: user_dotfiles.stat.exists == false
+  when: not user_dotfiles.stat.exists
 
 -
   name: Parsing Dotfiles configuration
@@ -23,6 +25,7 @@
     dest: "{{ dotfiles.source_directory }}"
     depth: "{{ dotfiles.checkout_depth | default(1) }}"
     update: true
+    version: "{{ dotfiles.revision | default('master') }}"
 
 -
   name: Syncing Dotfiles

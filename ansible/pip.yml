@@ -6,9 +6,11 @@
     path: "{{ user_directory }}/pip-packages.yml"
   register: user_pip_packages_file
 
-- fail:
+-
+  name: Check if pip packages file exists
+  fail:
     msg: pip packages file does not exist at expected location
-  when: user_pip_packages_file.stat.exists == false
+  when: not user_pip_packages_file.stat.exists
 
 -
   name: Parsing pip packages file

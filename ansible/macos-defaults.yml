@@ -6,9 +6,11 @@
     path: "{{ user_directory }}/macos-defaults.yml"
   register: user_macos_defaults
 
-- fail:
+-
+  name: Check if macOS Defaults file exists
+  fail:
     msg: macOS Defaults file does not exist at expected location
-  when: user_macos_defaults.stat.exists == false
+  when: not user_macos_defaults.stat.exists
 
 -
   name: Parsing macOS Defaults file
@@ -34,3 +36,4 @@
       2>&1
   ignore_errors: true
   with_items: "{{ macos_defaults_targets }}"
+  when: macos_defaults_targets | length > 0

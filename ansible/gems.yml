@@ -6,9 +6,11 @@
     path: "{{ user_directory }}/ruby-gems.yml"
   register: user_ruby_gems_file
 
-- fail:
+-
+  name: Check if Ruby Gems file exists
+  fail:
     msg: Ruby Gems file does not exist at expected location
-  when: user_ruby_gems_file.stat.exists == false
+  when: not user_ruby_gems_file.stat.exists
 
 -
   name: Parsing Ruby Gems file
