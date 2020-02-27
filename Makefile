@@ -11,8 +11,7 @@ SHELL := sh
 include make/*.mk
 
 .PHONY: all
-all:
-	@echo
+all: brewfile
 
 .PHONY: clean
 clean:

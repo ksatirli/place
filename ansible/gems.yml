@@ -1,21 +1,25 @@
 ---
 
-  -
-    name: Getting Ruby Gems file
-    stat:
-      path: "{{ user_directory }}/ruby-gems.yml"
-    register: user_ruby_gems_file
+-
+  name: Getting Ruby Gems file
+  stat:
+    path: "{{ user_directory }}/ruby-gems.yml"
+  register: user_ruby_gems_file
 
-  -
-    name: Parsing Ruby Gems file
-    include_vars: "{{ user_ruby_gems_file.stat.path }}"
-    when: user_ruby_gems_file.stat.exists
+- fail:
+    msg: Ruby Gems file does not exist at expected location
+  when: user_ruby_gems_file.stat.exists == false
 
-  -
-    name: Installing Ruby Gems
-    gem:
-      name: "{{ item.name }}"
-      state: "{{ item.state | default('present') }}"
-      version: "{{ item.version | default('latest') }}"
-    ignore_errors: true
-    with_items: "{{ ruby_gems }}"
+-
+  name: Parsing Ruby Gems file
+  include_vars: "{{ user_ruby_gems_file.stat.path }}"
+  when: user_ruby_gems_file.stat.exists
+
+-
+  name: Installing Ruby Gems
+  gem:
+    name: "{{ item.name }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default('latest') }}"
+  ignore_errors: true
+  with_items: "{{ ruby_gems }}"

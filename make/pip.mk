@@ -1,5 +1,5 @@
 .PHONY pip:
-pip: check-for-ansible # installs pip Packages
+pip: check-for-ansible # installs pip packages
 	@$(ansible-binary) \
 		--extra-vars="$(extra-vars)" \
 		--tags="pip" \
