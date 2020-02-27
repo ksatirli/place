@@ -1,12 +1,6 @@
 .PHONY uninstall-ansible:
-uninstall-ansible: # uninstalls Ansible
-ifeq ($(shell which $(pip-binary) >/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  $(pip-binary) is not available in $$PATH)
-	$(info Consider running make pip-install)
-	@exit 1
-else
+uninstall-ansible: check-for-piip # uninstalls Ansible
 	$(info $(sign-place)  Uninstalling Ansible with `$(pip-binary)`)
 	@$(pip-binary) \
 		uninstall \
 			ansible
-endif

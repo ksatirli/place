@@ -107,6 +107,14 @@ ifeq ($(shell which curl 2>/dev/null 2>&1; echo $$?), 1)
 	@exit 1
 endif
 
+.PHONY: check-for-pip:
+check-for-pip:
+ifeq ($(shell which $(pip-binary) >/dev/null 2>&1; echo $$?), 1)
+	$(info $(sign-warning)  $(pip-binary) is not available in $$PATH)
+	@exit 1
+endif
+
+
 .PHONY check-for-ruby:
 check-for-ruby:
 ifeq ($(shell which $(ruby-binary) 2>/dev/null 2>&1; echo $$?), 1)
