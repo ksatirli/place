@@ -1,7 +1,7 @@
-.PHONY gems:
-gems: check-for-ruby check-for-ansible # installs Ruby Gems
+.PHONY pip:
+pip: check-for-ansible # installs pip Packages
 	@$(ansible-binary) \
 		--extra-vars="$(extra-vars)" \
-		--tags="gems" \
+		--tags="pip" \
 		$(verbosity) \
 		"ansible/main.yml"

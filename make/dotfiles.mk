@@ -1,8 +1,7 @@
 .PHONY dotfiles:
 dotfiles: # Syncs Dotfiles from local repository to `$(HOME)`
-	$(ansible-binary) \
-		--skip-tags="$(skip-tags)" \
+	@$(ansible-binary) \
 		--extra-vars="$(extra-vars)" \
-		--tags="sync-dotfiles" \
+		--tags="dotfiles" \
 		$(verbosity) \
 		"ansible/main.yml"
