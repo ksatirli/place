@@ -27,10 +27,9 @@ overview:
 	$(info $(color-bright)CONFIGURATION$(color-off))
 	$(info )
 	$(info $(color-bright)user:$(color-off)             $(user))
-	$(info $(color-bright)home:$(color-off)             $(base-directory))
 	$(info $(color-bright)brewfile:$(color-off)         $(brewfile))
-	$(info $(color-bright)  source :$(color-off)	  $(dotfiles_repository))
-	$(info $(color-bright)  excludes:$(color-off)	  $(dotfiles_excludes))
+	$(info $(color-bright)base directory:$(color-off)	  $(base-directory))
+	$(info $(color-bright)user directory:$(color-off)	  $(user-directory))
 	$(info )
 
 ifdef only-tags
@@ -61,13 +60,13 @@ create-config-directory:
 	@mkdir \
 		-p "$(base-directory)"
 
-.PHONY: open-config-directory
-open-config-directory:
+.PHONY: open-base-directory
+open-base-directory:
 # In most runs, this target will not actually have to create $(base-directory),
 # as the target would be executed, in a normal flow, with the very first run.
 	@open "$(base-directory)"
 
-remove-config-directory:
+remove-base-directory:
 	$(info $(sign-place)  Removing config directory \`$(base-directory)\`)
 	@rm \
 		-i \
