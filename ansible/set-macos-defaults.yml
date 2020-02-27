@@ -1,0 +1,32 @@
+---
+
+  -
+    name: Getting macOS Defaults file
+    stat:
+      path: "{{ user_directory }}/macos-defaults.yml"
+    register: user_macos_defaults
+
+  -
+    name: Parsing macOS Defaults file
+    include_vars: "{{ user_macos_defaults.stat.path }}" # loads as `macos_defaults` and `macos_defaults_targets`
+    when: user_macos_defaults.stat.exists
+
+  -
+    name: Setting macOS Defaults
+    # double-quotes allow for writing space-separated values (e.g.: 0 1 2) as a single entity (e.g.: "0 1 2")
+    osx_defaults:
+      domain: "{{ item.domain }}"
+      key: "{{ item.key | default() }} {{ item.subkey | default() }}"
+      type: "{{ item.type | default() }}"
+      value: "{{ item.value }}"
+      state: "{{ item.state | default('absent') }}"
+    with_items: "{{ macos_defaults }}"
+
+  -
+    name: kill macOS Defaults targets
+    command: |
+      killall "{{ item }}"
+        > /dev/null
+        2>&1
+    ignore_errors: true
+    with_items: "{{ macos_defaults_targets }}"
