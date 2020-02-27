@@ -1,0 +1,23 @@
+---
+
+  -
+    name: Getting NPM Packages file
+    stat:
+      path: "{{ user_directory }}/npm-packages.yml"
+    register: user_npm_packages
+
+  -
+    name: Parsing NPM Package file
+    include_vars: "{{ user_npm_packages.stat.path }}"
+    when: user_npm_packages.stat.exists
+
+  -
+    name: install global NPM packages
+    npm:
+      name: "{{ item.name }}"
+      global: true
+      registry: "{{ item.registry | default('') }}"
+      state: "{{ item.state | default('present') }}"
+      version: "{{ item.version | default(omit) }}"
+    ignore_errors: true
+    with_items: "{{ npm_packages }}"

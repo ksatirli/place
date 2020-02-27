@@ -8,12 +8,12 @@
 
   -
     name: Parsing macOS Defaults file
-    include_vars: "{{ user_macos_defaults.stat.path }}" # loads as `macos_defaults` and `macos_defaults_targets`
+    include_vars: "{{ user_macos_defaults.stat.path }}"
     when: user_macos_defaults.stat.exists
 
   -
     name: Setting macOS Defaults
-    # double-quotes allow for writing space-separated values (e.g.: 0 1 2) as a single entity (e.g.: "0 1 2")
+    # double-quotes allow for writing space-separated values as single entity
     osx_defaults:
       domain: "{{ item.domain }}"
       key: "{{ item.key | default() }} {{ item.subkey | default() }}"
@@ -23,7 +23,7 @@
     with_items: "{{ macos_defaults }}"
 
   -
-    name: kill macOS Defaults targets
+    name: Terminate macOS Defaults targets
     command: |
       killall "{{ item }}"
         > /dev/null

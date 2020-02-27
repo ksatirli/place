@@ -8,7 +8,7 @@
 
   -
     name: Parsing Ruby Gems file
-    include_vars: "{{ user_ruby_gems_file.stat.path }}" # loads as `ruby_gems`
+    include_vars: "{{ user_ruby_gems_file.stat.path }}"
     when: user_ruby_gems_file.stat.exists
 
   -

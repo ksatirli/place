@@ -8,17 +8,17 @@
 
   -
     name: Parsing Dotfiles file
-    include_vars: "{{ user_dotfiles.stat.path }}" # loads as `dotfiles`
+    include_vars: "{{ user_dotfiles.stat.path }}"
     when: user_dotfiles.stat.exists
 
-#  -
-#    name: Pulling Dotfiles
-#    git:
-#      accept_hostkey: "{{ dotfiles.accept_hostkey | default(true) }}"
-#      repo: "{{ dotfiles.repository }}"
-#      dest: "{{ dotfiles.source_directory }}"
-#      depth: "{{ dotfiles.checkout_depth | default(1) }}"
-#      update: true
+  -
+    name: Pulling Dotfiles
+    git:
+      accept_hostkey: "{{ dotfiles.accept_hostkey | default(true) }}"
+      repo: "{{ dotfiles.repository }}"
+      dest: "{{ dotfiles.source_directory }}"
+      depth: "{{ dotfiles.checkout_depth | default(1) }}"
+      update: true
 
   -
     name: Syncing Dotfiles
@@ -32,9 +32,9 @@
       links: true
       mode: push
       recursive: true
-#      rsync_opts:
-#        [
-#          '--exclude-from="{{ dotfiles.excludes_file }}"'
-#        ]
+  #    rsync_opts:
+  #      [
+  #        '--exclude-from="{{ dotfiles.excludes_file }}"'
+  #      ]
       src: "{{ dotfiles.source_directory }}"
       times: true

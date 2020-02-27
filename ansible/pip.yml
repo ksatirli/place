@@ -1,0 +1,21 @@
+---
+
+  -
+    name: Getting pip Packages file
+    stat:
+      path: "{{ user_directory }}/pip-packages.yml"
+    register: user_pip_packages_file
+
+  -
+    name: Parsing pip Packages file
+    include_vars: "{{ user_pip_packages_file.stat.path }}"
+    when: user_pip_packages_file.stat.exists
+
+  -
+    name: Installing pip Packages
+    pip:
+      name: "{{ item.name }}"
+      state: "{{ item.state | default('present') }}"
+      version: "{{ item.version | default('') }}"
+    ignore_errors: true
+    with_items: "{{ pip_packages }}"
