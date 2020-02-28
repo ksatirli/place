@@ -10,6 +10,7 @@
   - [Usage](#usage)
     - [Installing Packages](#installing-packages)
     - [Setting macOS Defaults](#setting-macos-defaults)
+    - [Syncing Dotfiles](#syncing-dotfiles)
   - [Notes](#notes)
   - [Author Information](#author-information)
   - [License](#license)
@@ -74,7 +75,7 @@ In addition to `Brewfile` support, _Place_ also ships with support for installin
 - `place npm` for NPM packages defined in `~/.config/place/npm-packages.yml`
 - `place pip` for pip packages defined in `~/.config/place/pip-packages.yml`
 
-## Set macOS Defaults
+## Setting macOS Defaults
 
 _Place_ supports rapidly setting large amounts of macOS Defaults:
 
@@ -106,7 +107,7 @@ The keys `subkey`, `type`, and `state` are optional
 
 Any applications that require a restart for _Defaults_ to be applied can be listed in `macos_defaults_targets`.
 
-## Sync Dotfiles
+## Syncing Dotfiles
 
 _Place_ supports syncing your (remote) Dotfiles:
 
