@@ -125,7 +125,7 @@ A default configuration for `dotfiles.yml` could look like this:
 
 Internally, _Place_ will `git clone` the repository specified in `dotfiles.yml` and then `rsync` any files in `source_directory` with `destination_directory`.
 
-# Notes
+## Notes
 
 - _Place_ has a large number of additional options available, these can be found through `place help`
 
