@@ -9,14 +9,3 @@ SHELL := sh
 .SHELLFLAGS := -eu -o pipefail -c
 
 include make/*.mk
-
-.PHONY: all
-all: brewfile
-
-.PHONY: clean
-clean:
-	@echo
-
-.PHONY: test
-test:
-	@echo
