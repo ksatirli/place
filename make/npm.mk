@@ -1,5 +1,5 @@
 .PHONY npm:
-npm: check-for-ansible # installs global NPM packages
+npm: check-for-ansible # Installs global NPM packages
 	@$(ansible-binary) \
 		--extra-vars="$(extra-vars)" \
 		--tags="npm" \

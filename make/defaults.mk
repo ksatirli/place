@@ -1,5 +1,5 @@
 .PHONY defaults:
-defaults: check-for-ansible # sets macOS Defaults
+defaults: check-for-ansible # Sets macOS Defaults
 	@$(ansible-binary) \
 		--extra-vars="$(extra-vars)" \
 		--tags="macos-defaults" \

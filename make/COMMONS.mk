@@ -3,7 +3,7 @@ clear:
 	clear
 
 .SILENT .PHONY: help
-help: overview # displays this help text
+help: overview # Displays this help text
 	$(info )
 	$(info $(color-bright)OPTIONS$(color-off))
 	grep \
@@ -51,7 +51,7 @@ create-config-directory:
 		-p "$(base-directory)"
 
 .PHONY: open-base-directory
-open-base-directory: # opens Place base directory
+open-base-directory: # Opens Place base directory
 # In most runs, this target will not actually have to create $(base-directory),
 # as the target would be executed, in a normal flow, with the very first run.
 	@open "$(base-directory)"
@@ -65,7 +65,7 @@ remove-base-directory:
 			"$(base-directory)"
 
 .PHONY: open-user-directory
-open-user-directory: # opens Place User configuration directory
+open-user-directory: # Opens Place User configuration directory
 	@open "$(user-directory)"
 
 .PHONY check-for-ansible:

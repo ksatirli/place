@@ -1,5 +1,5 @@
 .PHONY code-extensions:
-code-extensions: check-for-code # installs Visual Studio Code Extensions
+code-extensions: check-for-code # Installs Visual Studio Code Extensions
 ifeq ("$(wildcard $(vscodeextensionsfile))","")
 	$(info $(sign-warning)  No vscodeextensionsfile available at $(vscodeextensionsfile))
 	@exit 1
