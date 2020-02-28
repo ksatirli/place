@@ -1,21 +1,141 @@
 # 📍 Place
 
-> Provision your macOS environment using Brew and Ansible
+> Provision your macOS environment through code
 
 ## Table of Contents
 
-- [Place](#place)
+- [Place](#-place)
   - [Table of Contents](#table-of-contents)
   - [Requirements](#requirements)
   - [Usage](#usage)
+    - [Installing Packages](#installing-packages)
+    - [Setting macOS Defaults](#setting-macos-defaults)
+  - [Notes](#notes)
   - [Author Information](#author-information)
   - [License](#license)
 
 ## Requirements
 
-_Place_ requires a (moderately) up-to-date copy of Git. You are all set for this if you run a recent version of macOS.
+- macOS
+- a (moderately) up-to-date copy of Git.
+- a compatible set of [configuration files](https://github.com/ksatirli/dotfiles/tree/master/.config/place)
 
 ## Usage
+
+- Create a local clone of the [Place repository](https://github.com/operatehappy/place):
+
+```sh
+git clone "git@github.com:operatehappy/place.git" "${HOME}/.place"
+```
+
+- Create an alias for `place` in your Bash configuration (usually `.bashrc` or `.bash_profile`):
+
+```sh
+alias place="make --file ${HOME}/.place/Makefile"
+```
+
+- Reload your Bash configuration and verify `place` is available
+
+After reloading your Bash configuration, verify everything works by running `place overview`:
+
+```sh
+📍  Place.
+
+CONFIGURATION
+
+brewfile:         /Users/operatehappy/.Brewfile
+base directory:   /Users/operatehappy/.cache/place
+user directory:   /Users/operatehappy/.config/place
+```
+
+- Install Xcode CLI Tools, Brew and Ansible:
+
+```sh
+place install
+```
+
+The Xcode CLI Tools, `brew`, and `ansible` can also be installed separately:
+
+- `place xcode` to install Xcode CLI Tools
+- `place brew` to install Brew
+- `place ansible` to install Ansible
+
+## Installing Packages
+
+- Install Brew Packages, Taps, Casks and App Store applications (using `mas`) defined in your `Brewfile`:
+
+```sh
+place brewfile
+```
+
+In addition to `Brewfile` support, _Place_ also ships with support for installing `gem`, `npm`, and `pip` packages, respectively:
+
+- `place gem` for Ruby Gems defined in `~/.config/place/ruby-gems.yml`
+- `place npm` for NPM packages defined in `~/.config/place/npm-packages.yml`
+- `place pip` for pip packages defined in `~/.config/place/pip-packages.yml`
+
+## Set macOS Defaults
+
+_Place_ supports rapidly setting large amounts of macOS Defaults:
+
+- `place defaults` for Defaults defined in `~/.config/place/macos-defaults.yml`
+
+A default configuration for `macos-defaults.yml` could look like this:
+
+```yaml
+---
+  macos_defaults:
+      - # auto-hide Dock
+        domain: "com.apple.dock"
+        key: "autohide"
+        type: "bool"
+        value: "true"
+        state: present
+
+  macos_defaults_targets:
+    - Dock
+```
+
+Each _Default_ is a child item of `macos_defaults` and must contain at least:
+
+- `domain`
+- `key`
+- `value`
+
+The keys `subkey`, `type`, and `state` are optional
+
+Any applications that require a restart for _Defaults_ to be applied can be listed in `macos_defaults_targets`.
+
+## Sync Dotfiles
+
+_Place_ supports syncing your (remote) Dotfiles:
+
+- `place dotfiles` for Dotfiles configuration defined in `~/.config/place/dotfiles.yml`
+
+A default configuration for `dotfiles.yml` could look like this:
+
+```yaml
+---
+
+  repository: "git@github.com:ksatirli/dotfiles.git"
+  source_directory: "{{ lookup('env','HOME') }}/.dotfiles"
+  destination_directory: "{{ lookup('env','HOME') }}/"
+  excludes_file: "{{ lookup('env','HOME') }}/.dotfiles/.config/rsync/excludes"
+```
+
+Internally, _Place_ will `git clone` the repository specified in `dotfiles.yml` and then `rsync` any files in `source_directory` with `destination_directory`.
+
+# Notes
+
+- _Place_ has a large number of additional options available, these can be found through `place help`
+
+- _Place_ supports in-line configuration for the three base variables `brewfile`, `base-directory` and `user-directory`
+  - `place brewfile=~/.alternate-Brewfile brewfile` to set the `Brewfile` location to `~/.alternate-Brewfile`
+  - `place base-directory=~/.place-home install` to set the base directory to `~/.place-home`
+  - `place user-directory=~/.place-user install` to set the user directory to `~/.place-user`
+
+The options for `base-directory` and `user-directory` are ephemeral and need to be set with _every_ Place CLI option (e.g.: `install`, `brew`, `ansible` etc.)
+
 ## Author Information
 
 This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/place/graphs/contributors)
