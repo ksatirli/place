@@ -23,5 +23,3 @@ brew-prune-days ?= 1
 pip-binary ?= pip3
 
 ruby-binary = ruby
-
-user ?= $(USER)
