@@ -69,11 +69,12 @@ The Xcode CLI Tools, `brew`, and `ansible` can also be installed separately:
 place brewfile
 ```
 
-In addition to `Brewfile` support, _Place_ also ships with support for installing `gem`, `npm`, and `pip` packages, respectively:
+In addition to `Brewfile` support, _Place_ also can install `gem`, `npm`, and `pip` packages as well as VS Code extensions, respectively:
 
 - `place gem` for Ruby Gems defined in `~/.config/place/ruby-gems.yml`
 - `place npm` for NPM packages defined in `~/.config/place/npm-packages.yml`
 - `place pip` for pip packages defined in `~/.config/place/pip-packages.yml`
+- `place code-extensions` for Visual Studio Code extensions defined in `~/.VisualStudioCodeExtensions`
 
 ## Setting macOS Defaults
 
@@ -135,7 +136,9 @@ Internally, _Place_ will `git clone` the repository specified in `dotfiles.yml` 
   - `place base-directory=~/.place-home install` to set the base directory to `~/.place-home`
   - `place user-directory=~/.place-user install` to set the user directory to `~/.place-user`
 
-The options for `base-directory` and `user-directory` are ephemeral and need to be set with _every_ Place CLI option (e.g.: `install`, `brew`, `ansible` etc.)
+The options for `base-directory` and `user-directory` are ephemeral and need to be set with _every_ Place CLI option (e.g.: `install`, `brew`, `ansible` etc.).
+
+_ Additional configuration options can be found in `make/CONFIG.mk`
 
 ## Author Information
 
