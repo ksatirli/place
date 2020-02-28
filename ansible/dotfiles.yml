@@ -1,0 +1,47 @@
+---
+
+-
+  name: Getting Dotfiles configuration
+  stat:
+    path: "{{ user_directory }}/dotfiles.yml"
+  register: user_dotfiles
+
+-
+  name: Check if Dotfiles configuration exists
+  fail:
+    msg: Dotfiles configuration does not exist at expected location
+  when: not user_dotfiles.stat.exists
+
+-
+  name: Parsing Dotfiles configuration
+  include_vars: "{{ user_dotfiles.stat.path }}"
+  when: user_dotfiles.stat.exists
+
+-
+  name: Pulling Dotfiles
+  git:
+    accept_hostkey: "{{ dotfiles.accept_hostkey | default(true) }}"
+    repo: "{{ dotfiles.repository }}"
+    dest: "{{ dotfiles.source_directory }}"
+    depth: "{{ dotfiles.checkout_depth | default(1) }}"
+    update: true
+    version: "{{ dotfiles.revision | default('master') }}"
+
+-
+  name: Syncing Dotfiles
+  synchronize:
+    archive: true
+    checksum: true
+    delete: false
+    dest: "{{ dotfiles.destination_directory }}"
+    dirs: true
+    existing_only: false
+    links: true
+    mode: push
+    recursive: true
+#    rsync_opts:
+#      [
+#        '--exclude-from="{{ dotfiles.excludes_file }}"'
+#      ]
+    src: "{{ dotfiles.source_directory }}"
+    times: true

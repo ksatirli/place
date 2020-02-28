@@ -1,0 +1,29 @@
+---
+
+-
+  name: Getting NPM packages file
+  stat:
+    path: "{{ user_directory }}/npm-packages.yml"
+  register: user_npm_packages
+
+-
+  name: Check if NPM packages file exists
+  fail:
+    msg: NPM packages file does not exist at expected location
+  when: not user_npm_packages.stat.exists
+
+-
+  name: Parsing NPM packages file
+  include_vars: "{{ user_npm_packages.stat.path }}"
+  when: user_npm_packages.stat.exists
+
+-
+  name: install global NPM packages
+  npm:
+    name: "{{ item.name }}"
+    global: true
+    registry: "{{ item.registry | default('') }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+  ignore_errors: true
+  with_items: "{{ npm_packages }}"

@@ -1,0 +1,28 @@
+---
+
+-
+  connection: local
+  hosts: localhost
+  strategy: free
+  gather_facts: false
+
+  tasks:
+    - include: dotfiles.yml
+      tags:
+        - dotfiles
+
+    - include: gems.yml
+      tags:
+        - gems
+
+    - include: macos-defaults.yml
+      tags:
+        - macos-defaults
+
+    - include: npm.yml
+      tags:
+        - npm
+
+    - include: pip.yml
+      tags:
+        - pip
