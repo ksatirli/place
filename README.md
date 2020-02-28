@@ -69,6 +69,15 @@ The Xcode CLI Tools, `brew`, and `ansible` can also be installed separately:
 place brewfile
 ```
 
+Brew-managed packages, applications, and casks can be managed through:
+
+- `place brew-update` to update Brew
+- `place brew-upgrade` to upgrade Brew packages
+- `place brew-upgrade-casks` to update Brew Casks
+- `place brew-clean` to clean up cached Brew files
+
+## Additional Package Managers
+
 In addition to `Brewfile` support, _Place_ also can install `gem`, `npm`, and `pip` packages as well as VS Code extensions, respectively:
 
 - `place gem` for Ruby Gems defined in `~/.config/place/ruby-gems.yml`
