@@ -85,4 +85,6 @@ jobs:
               --config "${{ github.workspace }}/${{ env.META_PATH }}/${{ env.PRECOMMIT_CONFIG }}" \
               --all-files
         working-directory: "${{ github.workspace }}/${{ env.SELF_PATH }}"
+        env:
+          SKIP: require-ascii
         shell: sh
