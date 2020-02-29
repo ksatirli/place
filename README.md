@@ -1,6 +1,6 @@
 # 📍 Place
 
-> Provision your macOS environment through code
+> Provision macOS environments through code
 
 ## Table of Contents
 
@@ -74,6 +74,7 @@ Brew-managed packages, applications, and casks can be managed through:
 - `place brew-update` to update Brew
 - `place brew-upgrade` to upgrade Brew packages
 - `place brew-upgrade-casks` to update Brew Casks
+- `place brew-outdated` to list outdated Brew packages
 - `place brew-clean` to clean up cached Brew files
 
 ## Additional Package Managers

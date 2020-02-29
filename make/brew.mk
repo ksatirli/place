@@ -49,6 +49,11 @@ brew-clean: check-for-brew # Cleans up cached Brew files
 		cleanup \
 			--prune "$(brew-prune-days)"
 
+.PHONY brew-outdated:
+brew-outdated: check-for-brew # Updates Brew
+	$(info $(sign-place)  Listing outdated Brew packages)
+	@brew outdated
+
 .PHONY brew-update:
 brew-update: check-for-brew # Updates Brew
 	$(info $(sign-place)  Updating Brew)
