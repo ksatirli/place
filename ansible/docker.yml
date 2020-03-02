@@ -1,0 +1,29 @@
+---
+
+-
+  name: Getting Docker Images file
+  stat:
+    path: "{{ user_directory }}/docker-images.yml"
+  register: user_docker_images_file
+
+-
+  name: Check if Docker Images file exists
+  fail:
+    msg: Docker Images file does not exist at expected location
+  when: not user_docker_images_file.stat.exists
+
+-
+  name: Parsing Docker Images file
+  include_vars: "{{ user_docker_images_file.stat.path }}"
+  when: user_docker_images_file.stat.exists
+
+-
+  name: Pulling Docker Images
+  docker_image:
+    name: "{{ item.name }}"
+    repository: "{{ item.repository | default(omit) }}"
+    source: pull
+    state: "{{ item.state | default('present') }}"
+    tag: "{{ item.tag | default('latest') }}"
+  ignore_errors: true
+  with_items: "{{ docker_images }}"
