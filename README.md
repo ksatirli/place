@@ -32,7 +32,7 @@ git clone "git@github.com:operatehappy/place.git" "${HOME}/.place"
 - Create an alias for `place` in your Bash configuration (usually `.bashrc` or `.bash_profile`):
 
 ```sh
-alias place="make --file ${HOME}/.place/Makefile"
+alias place="make --file='${HOME}/.place/Makefile' --directory='${HOME}/.place/' ${@}"
 ```
 
 - Reload your Bash configuration and verify `place` is available
