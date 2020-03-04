@@ -83,3 +83,4 @@ check-for-ansible:
 check-for-brew:
 	$(call has_required,$(ruby-binary))
 
+	$(call has_required,brew)
