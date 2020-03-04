@@ -51,14 +51,6 @@ endif
 .PHONY: all
 all: brewfile code-extensions defaults dotfiles gem pip npm
 
-.PHONY: clean
-clean:
-	@echo This target is currently unused
-	@exit 0
-
-.PHONY: test
-test: check-for-curl check-for-xcode-select check-for-ruby check-for-brew check-for-pip check-for-ansible check-for-code
-
 create-config-directory:
 # In most runs, this target will not actually have to create $(base-directory),
 # as the target would be executed, in a normal flow, with the very first run.
