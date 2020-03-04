@@ -1,5 +1,7 @@
 .PHONY ansible:
-ansible: check-for-pip # Installs Ansible
+ansible: # Installs Ansible
+	$(call has_required,$(pip-binary))
+
 	$(info $(sign-place)  Installing Ansible with `$(pip-binary)`)
 	@$(pip-binary) \
 		install \

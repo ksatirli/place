@@ -1,3 +1,7 @@
+define has_required
+	$(if $(shell which $(1)),,$(error Unable to continue due to missing dependency `$(1)` in $$PATH))
+endef
+
 .SILENT .PHONY: clear
 clear:
 	clear
@@ -81,50 +85,9 @@ open-user-directory: # Opens Place User configuration directory
 
 .PHONY check-for-ansible:
 check-for-ansible:
-ifeq ($(shell which $(ansible-binary) 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  $(ansible-binary) is not available in $$PATH)
-	@exit 1
-endif
+	$(call has_required,$(ansible-binary))
 
 .PHONY check-for-brew:
-check-for-brew: check-for-ruby
-ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  brew is not available in $$PATH)
-	$(info Consider running make brew-install)
-	@exit 1
-endif
+check-for-brew:
+	$(call has_required,$(ruby-binary))
 
-.PHONY check-for-code:
-check-for-code:
-ifeq ($(shell which code 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  code is not available in $$PATH)
-	@exit 1
-endif
-
-.PHONY check-for-curl:
-check-for-curl:
-ifeq ($(shell which curl 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  curl is not available in $$PATH)
-	@exit 1
-endif
-
-.PHONY check-for-pip:
-check-for-pip:
-ifeq ($(shell which $(pip-binary) 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  $(pip-binary) is not available in $$PATH)
-	@exit 1
-endif
-
-.PHONY check-for-ruby:
-check-for-ruby:
-ifeq ($(shell which $(ruby-binary) 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  $(ruby-binary) is not available in $$PATH)
-	@exit 1
-endif
-
-.PHONY check-for-xcode-select:
-check-for-xcode-select:
-ifeq ($(shell which curl 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  xcode-select is not available in $$PATH)
-	@exit 1
-endif
