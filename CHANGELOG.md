@@ -1,4 +1,4 @@
-# `2.0.0` (2020-02-29)
+# `2.0.0` (2020-03-05)
 
 * expands and rewrites `README`
 * expands configuration variables
