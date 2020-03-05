@@ -1,12 +1,24 @@
 ###
 #	Utilities
 ###
+.PHONY install-tools:
+install-tools: overview xcode brew postinstall-brew ansible
+
+.PHONY update-tools:
+update-tools: overview brew-upgrade brew-update brew-update-casks brewfile brew-clean dotfiles docker gems npm pip
+
 .PHONY uninstall-tools:
 uninstall-tools: overview uninstall-ansible uninstall-brew reset-xcode
 
 ###
 #	User-facing targets
 ###
+.PHONY install:
+install: install-tools # Installs Xcode CLI Tools, Brew, and Ansible
+
+.PHONY update:
+update: update-tools # Updates Brew resources, Dotfiles, Docker images, Gems, NPM and pip packages
+
 .PHONY uninstall:
 uninstall: uninstall-tools # Uninstalls Ansible, and Brew, and resets Xcode CLI Tools
 
