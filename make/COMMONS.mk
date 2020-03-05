@@ -48,9 +48,6 @@ endif
 	$(info )
 	@exit 0
 
-.PHONY: all
-all: brewfile code-extensions defaults dotfiles gem pip npm
-
 create-config-directory:
 # In most runs, this target will not actually have to create $(base-directory),
 # as the target would be executed, in a normal flow, with the very first run.
