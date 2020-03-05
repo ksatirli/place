@@ -8,6 +8,7 @@
 * adds `gem`, `npm`, `pip` support
 * adds `code` support
 * adds Dotfiles support
+* adds Docker Images support
 * adds macOS Defaults support
 * adds GitHub Actions
 * adds `LICENSE`
@@ -15,6 +16,7 @@
 * adds helper for prerequesite checking
 * make `sudo` requirement more obvious
 * skip `pre-commit:require-ascii` check
+* makes Ansible less chatty
 
 ## `1.0.0` (2015-2017)
 

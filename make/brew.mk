@@ -2,7 +2,9 @@
 #	Utilities
 ###
 .PHONY: brew-fetch-scripts
-brew-fetch-scripts: check-for-curl
+brew-fetch-scripts:
+	$(call has_required,curl)
+
 	$(info $(sign-place)  Fetching Brew Installer)
 	@curl \
 		--silent \
@@ -18,21 +20,16 @@ brew-fetch-scripts: check-for-curl
 		"$(brew-uninstaller-url)"
 
 .PHONY brew-install:
-brew-install: create-config-directory check-for-ruby brew-fetch-scripts
+brew-install: create-config-directory brew-fetch-scripts
 
 .PHONY brew-postinstall:
-brew-postinstall:
-ifeq ($(shell which brew 2>/dev/null 2>&1; echo $$?), 1)
-	$(info $(sign-warning)  brew is not available in $$PATH)
-	$(info Nothing to uninstall)
-	@exit 0
-else
+brew-postinstall: check-for-brew
+
 	$(info $(sign-place)  Disabling Brew Analytics)
 	@brew \
 		analytics off
 	@brew \
 		analytics state
-endif
 
 ###
 #	User-facing targets
@@ -40,7 +37,7 @@ endif
 .PHONY brew:
 brew: brew-install # Fetches Brew Installer and installs Brew
 	$(info $(sign-place)  Installing Brew)
-	@$(ruby-binary) "$(base-directory)/$(brew-installer-file)"
+	@bash "$(base-directory)/$(brew-installer-file)"
 
 .PHONY brew-clean:
 brew-clean: check-for-brew # Cleans up cached Brew files
@@ -48,6 +45,11 @@ brew-clean: check-for-brew # Cleans up cached Brew files
 	@brew \
 		cleanup \
 			--prune "$(brew-prune-days)"
+
+.PHONY brew-outdated:
+brew-outdated: check-for-brew # Lists outdated Brew packages
+	$(info $(sign-place)  Listing outdated Brew packages)
+	@brew outdated
 
 .PHONY brew-update:
 brew-update: check-for-brew # Updates Brew

@@ -1,7 +1,7 @@
-.PHONY gems:
-gems: check-for-ansible # Installs Ruby Gems
+.PHONY docker:
+docker: # Pulls Docker Images
 	@$(ansible-binary) \
 		--extra-vars="$(extra-vars)" \
-		--tags="gems" \
+		--tags="docker" \
 		$(verbosity) \
 		"ansible/main.yml"

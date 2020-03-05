@@ -7,6 +7,10 @@
   gather_facts: false
 
   tasks:
+    - include: docker.yml
+      tags:
+        - docker
+
     - include: dotfiles.yml
       tags:
         - dotfiles

@@ -23,7 +23,7 @@
     name: "{{ item.name }}"
     global: true
     registry: "{{ item.registry | default('') }}"
-    state: "{{ item.state | default('present') }}"
+    state: "{{ item.state | default('latest') }}"
     version: "{{ item.version | default(omit) }}"
   ignore_errors: true
   with_items: "{{ npm_packages }}"

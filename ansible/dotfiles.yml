@@ -32,16 +32,21 @@
   synchronize:
     archive: true
     checksum: true
+    compress: false
     delete: false
     dest: "{{ dotfiles.destination_directory }}"
-    dirs: true
     existing_only: false
     links: true
     mode: push
     recursive: true
-#    rsync_opts:
-#      [
-#        '--exclude-from="{{ dotfiles.excludes_file }}"'
-#      ]
+    rsync_opts:
+      [
+        '--verbose',
+#        '--exclude-from="{{ dotfiles.excludes_file }}"',
+        '--executability',
+        '--recursive',
+        '--specials',
+        '--update',
+      ]
     src: "{{ dotfiles.source_directory }}"
     times: true

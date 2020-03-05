@@ -14,10 +14,11 @@ extra-vars ?= user_directory=$(user-directory)
 verbosity ?=
 
 brew-base-url ?= https://raw.githubusercontent.com/Homebrew/install/master
-brew-installer-url ?= $(brew-base-url)/install
+brew-installer-url ?= $(brew-base-url)/install.sh
+# TODO: update when https://github.com/Homebrew/install/issues/266 is closed and merged
 brew-uninstaller-url ?= $(brew-base-url)/uninstall
-brew-installer-file ?= brew-installer.rb
-brew-uninstaller-file ?= brew-uninstaller.rb
+brew-installer-file ?= brew-installer.sh
+brew-uninstaller-file ?= brew-uninstaller
 brew-prune-days ?= 1
 
 pip-binary ?= pip3
