@@ -40,7 +40,7 @@ alias place='make --file="${HOME}/.place/Makefile" --directory="${HOME}/.place/"
 After reloading your Bash configuration, verify everything works by running `place overview`:
 
 ```sh
-📍  Place.
+📍  Place
 
 CONFIGURATION
 
@@ -148,7 +148,7 @@ Internally, _Place_ will `git clone` the repository specified in `dotfiles.yml` 
 
 The options for `base-directory` and `user-directory` are ephemeral and need to be set with _every_ Place CLI option (e.g.: `install`, `brew`, `ansible` etc.).
 
-_ Additional configuration options can be found in `make/CONFIG.mk`
+- Additional configuration options can be found in [make/CONFIG.mk](https://github.com/operatehappy/place/blob/master/make/CONFIG.mk)
 
 ## Author Information
 
