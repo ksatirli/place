@@ -25,7 +25,8 @@ help: overview # Displays this help text
 
 .PHONY: overview
 overview:
-	$(info $(color-bright)$(sign-place)  Place.$(color-off))
+	$(info )
+	$(info $(color-bright)$(sign-place)  Place$(color-off))
 	$(info )
 	$(info )
 	$(info $(color-bright)CONFIGURATION$(color-off))
