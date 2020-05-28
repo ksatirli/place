@@ -20,6 +20,8 @@ brew-uninstaller-url ?= $(brew-base-url)/uninstall
 brew-installer-file ?= brew-installer.sh
 brew-uninstaller-file ?= brew-uninstaller
 brew-prune-days ?= 1
+brew-cask-opts ?= --no-quarantine
+brew-cu-opts ?= --no-quarantine
 
 pip-binary ?= pip3
 
