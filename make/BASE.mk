@@ -2,7 +2,7 @@
 #	Utilities
 ###
 .PHONY install-tools:
-install-tools: overview xcode brew postinstall-brew ansible
+install-tools: overview xcode brew brew-postinstall ansible
 
 .PHONY update-tools:
 update-tools: overview brew-upgrade brew-update brew-update-casks brewfile brew-clean dotfiles docker gems npm pip
