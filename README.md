@@ -155,7 +155,7 @@ The options for `base-directory` and `user-directory` are ephemeral and need to 
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/place/graphs/contributors)
+This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/place/graphs/contributors).
 
 Development of this module was sponsored by [Operate Happy](https://github.com/operatehappy).
 
@@ -163,7 +163,7 @@ Development of this module was sponsored by [Operate Happy](https://github.com/o
 
 Licensed under the Apache License, Version 2.0 (the "License").
 
-You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an _"AS IS"_ basis, without WARRANTIES or conditions of any kind, either express or implied.
 
