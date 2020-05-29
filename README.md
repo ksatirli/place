@@ -148,11 +148,14 @@ Internally, _Place_ will `git clone` the repository specified in `dotfiles.yml` 
 
 The options for `base-directory` and `user-directory` are ephemeral and need to be set with _every_ Place CLI option (e.g.: `install`, `brew`, `ansible` etc.)
 
+- _Place_ now defaults Brew Cask Update jobs to utilize the `--no-quarantine` flag as any `Brewfile` supplied arguments are chosen _by_ the user and should therefore be trustworthy
+  - These options can be overridden by passing empty `brew-cask-opts` and `brew-cu-opts` arguments to _Place_
+
 - Additional configuration options can be found in [make/CONFIG.mk](https://github.com/operatehappy/place/blob/master/make/CONFIG.mk)
 
 ## Author Information
 
-This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/place/graphs/contributors)
+This module is maintained by the contributors listed on [GitHub](https://github.com/operatehappy/place/graphs/contributors).
 
 Development of this module was sponsored by [Operate Happy](https://github.com/operatehappy).
 
@@ -160,7 +163,7 @@ Development of this module was sponsored by [Operate Happy](https://github.com/o
 
 Licensed under the Apache License, Version 2.0 (the "License").
 
-You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+You may obtain a copy of the License at [apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an _"AS IS"_ basis, without WARRANTIES or conditions of any kind, either express or implied.
 

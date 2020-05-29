@@ -59,9 +59,11 @@ brew-update: check-for-brew # Updates Brew
 .PHONY brew-update-casks: check-for-brew
 brew-update-casks: check-for-brew # Updates Brew Casks
 	$(info $(sign-place)  Updating Brew Casks)
-	@brew \
+	@export HOMEBREW_CASK_OPTS="$(brew-cask-opts)" && \
+	brew \
 		cu \
-			--all
+			--all \
+			(brew-cu-opts)
 
 .PHONY brew-upgrade:
 brew-upgrade: check-for-brew # Upgrades Brew installation
@@ -76,6 +78,7 @@ ifeq ("$(wildcard $(brewfile))","")
 else
 	$(info $(sign-place) Installing Brews, Taps, and Casks from Brewfile)
 	$(info $(color-bright)$(sign-warning)  Some operations might require root privilege$(color-off))
+	@export HOMEBREW_CASK_OPTS="$(brew-cask-opts)" && \
 	@brew \
 		bundle \
 			--file="$(brewfile)"
