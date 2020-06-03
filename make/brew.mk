@@ -63,7 +63,7 @@ brew-update-casks: check-for-brew # Updates Brew Casks
 	brew \
 		cu \
 			--all \
-			(brew-cu-opts)
+			$(brew-cu-opts)
 
 .PHONY brew-upgrade:
 brew-upgrade: check-for-brew # Upgrades Brew installation
